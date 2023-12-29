@@ -50,3 +50,16 @@ const info = {
         return this.firstName + "" + this.lastName;
     }
 }
+// apply with function
+const section = {
+    detials: function () {
+        this.subject + "" + this.class
+    }
+
+}
+const section_2 = {
+    subject: 'web_developement',
+    class: '9th',
+    address: 'jama_masjid_road',
+}
+section.detials.apply(section_2);
