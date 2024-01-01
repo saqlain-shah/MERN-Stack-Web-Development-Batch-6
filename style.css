@@ -11,3 +11,12 @@ h1{
     margin: 30px;
     color: #8400ff;
 }
+p {
+    text-align: justify;
+    color: #8400ff;
+    width: 40%;
+    position: absolute;
+    left: 28%;
+    margin-top: 3vmin;
+    font-size: 1.27rem;
+}
