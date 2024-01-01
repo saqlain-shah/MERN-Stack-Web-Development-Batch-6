@@ -20,3 +20,11 @@ p {
     margin-top: 3vmin;
     font-size: 1.27rem;
 }
+hr {
+    background-color: #6c04cd;
+    width: 20%;
+    height: 0.67vmin;
+    border-radius: 2vmin;
+    position: absolute;
+    left: 28%;
+}
