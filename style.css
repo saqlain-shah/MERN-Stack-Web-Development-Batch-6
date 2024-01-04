@@ -6,6 +6,14 @@
 body{
     background-color: #d9b0ff;
 }
+
+.logo{
+    width: 50vmin;
+}
+#logo-png{
+    width: 20vmin;
+    margin: 2vmin;
+}
 h1{
     text-align: center;
     margin: 30px;
