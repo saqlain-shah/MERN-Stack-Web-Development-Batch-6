@@ -1,2 +1,5 @@
+# MERN STACK COURSE BATCH 6
+
 # Web-Dev-Course
-# MERN STACK COURSE BATCH 6 
+
+This branch belongs to JalalTrainee.
