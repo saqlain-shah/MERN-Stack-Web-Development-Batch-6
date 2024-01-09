@@ -27,3 +27,24 @@ console.log("isMale =", isMale);
 }
 
 console.log("outside block  b =", b);
+
+//object
+
+let person = {
+  fullName: "Jalal Hussain",
+  age: 25,
+  isMale: true,
+};
+
+let person1 = {
+  fullName1: "Jamal Hussain",
+  age1: 20,
+  isMale1: true,
+};
+person = person1;
+console.log(person);  
+
+// array
+let marks = [23, 34, 46, 56];
+ 
+console.log(marks);
