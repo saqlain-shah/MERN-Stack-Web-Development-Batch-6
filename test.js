@@ -30,21 +30,44 @@ console.log("outside block  b =", b);
 
 //object
 
-let person = {
+const student = {
   fullName: "Jalal Hussain",
   age: 25,
   isMale: true,
+  marks: [
+    {
+      Phy: {
+        Theory: 60,
+        Practical: 30,
+      },
+    },
+    {
+      Chem: {
+        Theory: 78,
+        Practical: 40,
+      },
+    },
+    {
+      Bio: {
+        Theory: 89,
+        Practical: 50,
+      },
+    },
+    { urdu: 90 },
+  ],
 };
 
-let person1 = {
-  fullName1: "Jamal Hussain",
-  age1: 20,
-  isMale1: true,
-};
-person = person1;
-console.log(person);  
+console.log(student);
+
+// let person2 = {
+//   fullName: "Jamal Hussain",
+//   age: 20,
+//   isMale: true,
+// };
+// // person = person1;
+// console.log(person2);
 
 // array
 let marks = [23, 34, 46, 56];
- 
+
 console.log(marks);
