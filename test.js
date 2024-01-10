@@ -59,15 +59,23 @@ const student = {
 
 console.log(student);
 
-// let person2 = {
-//   fullName: "Jamal Hussain",
-//   age: 20,
-//   isMale: true,
-// };
-// // person = person1;
-// console.log(person2);
+const student2 = {
+  fullName: "Jamal Hussain",
+  age: 20,
+  isMale: true,
+};
+student.age = 34;
+console.log(student);
 
 // array
 let marks = [23, 34, 46, 56];
 
 console.log(marks);
+
+let num1 = 1;
+let num2 = 2;
+if (num1 !== num2) {
+  console.log("True");
+}else{
+  console.log("False");
+}
