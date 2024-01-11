@@ -30,6 +30,9 @@ person.name = "saqlain";
 //person = person1;
 console.log("Object", person);
 console.log("Object", person1);
+//person = person1;
+console.log("userData", userData);
+
 
 //console.log("Array", userData);
 
@@ -40,3 +43,5 @@ userData[1] = 98;
 //console.log("Practical", person.marks[1].practical);
 //let a = 10;
 //let b = a;
+
+
