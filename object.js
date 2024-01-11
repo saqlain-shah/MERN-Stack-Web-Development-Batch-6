@@ -57,9 +57,10 @@
 const fruits = ["Banana", "Orange", "Apple", "Mango"];
 let length = fruits.length;
 
-// console.log(fruits.length)
-// console.log(fruits.length[3])
+console.log(fruits.length)
+console.log(fruits.length[3])
 
-// console.log(fruits[1].length)
+console.log(fruits[1].length)
+console.warn(fruits);
 
 
