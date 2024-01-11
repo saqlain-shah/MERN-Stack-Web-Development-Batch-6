@@ -169,3 +169,7 @@ console.log("Hello Jalal Hussain");
 // let cond3 = num2 === num1; //false
 // console.log("cond1 && cond2 =", cond1 && cond2 && cond3); //false
 // console.log("cond1 && cond2 =", cond1 || cond2 || cond3); //true
+
+
+// FUNCTION
+
