@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .cal {
+        width: 45%;
+        height: 70vh;
+        background-image: url("./IMG_20220503_141130_291.jpg");
+
+        background-size: 80% 70vh;
+        background-repeat: no-repeat;
+        text-align: center;
+      }
+      .cal input[type="button"] {
+        width: 90px;
+        height: 40px;
+        background-color: navajowhite;
+        /* background-size: 100% 20vh;
+            background-repeat: no-repeat; */
+        border-radius: 30px;
+        height: 10vh;
+        font-size: 24px;
+      }
+      .cal table {
+        padding: 40px;
+        width: 20%;
+      }
+      #res {
+        /* margin-top: 7vh; */
+        width: 90%;
+        height: 40px;
+        background-color: antiquewhite;
+        font-size: 24px;
+      }
+      @media screen and (max-width: 1288px) {
+        .cal {
+          width: 45%;
+          background-size: 90% 70vh;
+        }
+        .cal table {
+          padding: 30px;
+          width: 15%;
+        }
+      }
+      @media screen and (max-width: 1068px) {
+        .cal {
+          width: 50%;
+          background-size: 90% 70vh;
+        }
+        .cal table {
+          padding: 20px;
+          width: 15%;
+        }
+      }
+      @media screen and (max-width: 948px) {
+        .cal {
+          width: 60%;
+          background-size: 90% 70vh;
+        }
+        .cal table {
+          padding: 30px;
+          width: 15%;
+        }
+      }
+      @media screen and (max-width: 819px) {
+        .cal {
+          width: 70%;
+          background-size: 90% 70vh;
+        }
+        .cal table {
+          padding: 30px;
+          width: 15%;
+        }
+      }
+      @media screen and (max-width: 690px) {
+        .cal {
+          width: 80%;
+          background-size: 90% 70vh;
+        }
+        .cal table {
+          padding: 30px;
+          width: 15%;
+        }
+      }
+      @media screen and (max-width: 601px) {
+        .cal {
+          width: 90%;
+          background-size: 90% 70vh;
+        }
+        .cal table {
+          padding: 30px;
+          width: 15%;
+        }
+      }
+      @media screen and (max-width: 543px) {
+        .cal {
+          width: 100%;
+          background-size: 100% 70vh;
+        }
+        .cal table {
+          padding: 30px;
+          width: 15%;
+        }
+      }
+      @media screen and (max-width: 450px) {
+        .cal {
+          width: 100%;
+          background-size: 100% 70vh;
+        }
+        .cal table {
+          padding: 0;
+          width: 15%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cal">
+      <table>
+        <tr>
+          <td colspan="3">
+            <input type="text" id="res" disabled />
+          </td>
+          <td>
+            <input type="button" value="C" id="clr" onclick="clearSc()" />
+          </td>
+        </tr>
+        <tr>
+          <td><input type="button" value="9" onclick="disply('9')" /></td>
+          <td><input type="button" value="8" onclick="disply('8')" /></td>
+          <td><input type="button" value="7" onclick="disply('7')" /></td>
+          <td><input type="button" value="+" onclick="disply('+')" /></td>
+        </tr>
+
+        <tr>
+          <td><input type="button" value="6" onclick="disply('6')" /></td>
+          <td><input type="button" value="5" onclick="disply('5')" /></td>
+          <td><input type="button" value="4" onclick="disply('4')" /></td>
+          <td><input type="button" value="-" onclick="disply('-')" /></td>
+        </tr>
+
+        <tr>
+          <td><input type="button" value="3" onclick="disply('3')" /></td>
+          <td><input type="button" value="2" onclick="disply('2')" /></td>
+          <td><input type="button" value="1" onclick="disply('1')" /></td>
+          <td><input type="button" value="*" onclick="disply('*')" /></td>
+        </tr>
+
+        <tr>
+          <td><input type="button" value="." onclick="disply('.')" /></td>
+          <td><input type="button" value="0" onclick="disply(0)" /></td>
+          <td><input type="button" value="=" onclick="calculate('=')" /></td>
+          <td><input type="button" value="/" onclick="disply('/')" /></td>
+        </tr>
+      </table>
+      <address style="color: rgb(238, 15, 15)">&hearts; By Anjum Balghari</address>
+    </div>
+  </body>
+  <script>
+    function disply(elm) {
+      document.getElementById("res").value += elm;
+      setTimeout(() => {
+        document.getElementById("res").value = "";
+      }, 34000);
+    }
+    function clearSc() {
+      document.getElementById("res").value = "";
+    }
+    function calculate(value) {
+      var a = document.getElementById("res").value;
+      var b = eval(a);
+      document.getElementById("res").value = b;
+      setTimeout(() => {
+        document.getElementById("res").value = "";
+      }, 30000);
+    }
+  </script>
+</html>
