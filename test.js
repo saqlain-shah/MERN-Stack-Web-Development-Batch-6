@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 console.log("Hello Jalal Hussain");
 
 // //block scope
@@ -179,10 +179,9 @@ function add(a, b) {
   console.log(`sum = ${sum}`);
 }
 
-let num1 = 2;
-let num2 = 4;
-add(num1, num2);
-=======
+// let num1 = 2;
+// let num2 = 4;
+// add(num1, num2);
 //console.log("Hello Jalal Hussain");
 const a = 2;
 const myName = "Jalal HUssain";
@@ -212,7 +211,6 @@ const isMale = true;
 }
 
 //console.log("outside block  b =", b);
->>>>>>> 382a2d6c886273c1251b0f7f929debd1bbce1ba6
 
 // Arrow function
 let mult = (a, b) => { 
@@ -221,9 +219,7 @@ let mult = (a, b) => {
   console.log(`product = ${prod}`);
 };
 
-<<<<<<< HEAD
 mult(2, 3);
-=======
 //console.log(student);
 
 // let person2 = {
@@ -258,5 +254,3 @@ if(num1+num2||num1++>num2){
 
 }else
     console.log("False");
-
->>>>>>> 382a2d6c886273c1251b0f7f929debd1bbce1ba6
