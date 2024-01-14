@@ -26,17 +26,17 @@ console.log("Sum",sum(2,3));
 console.log("avg",avg(2,3,4));
 console.log("paramater",primater(2));
 
-let fun=( [],c)=>
+let fun=( arr,c)=>
 {  let	temp=0, g=0;
 for( i=0;i<=c;i++)
 {
-   if([i]>temp)
+   if(i>temp)
    {
-       temp=[i];
+       temp=i;
    }
-else if([i]<g)
+else if(arr<g)
    {
-       g=[i];
+       g=arr;
    }
   
 }
@@ -48,7 +48,7 @@ let arr=[5,3,2];
 	
 fun(arr,3);
 
-let squre=num=>{
-    console.log("Squre is " , sqrt(num))
-}
-squre(4);
+// let squre=num=>{
+//     console.log("Squre is " , sqrt(num))
+// }
+// squre(4);
