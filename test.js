@@ -170,6 +170,23 @@ console.log("Hello Jalal Hussain");
 // console.log("cond1 && cond2 =", cond1 && cond2 && cond3); //false
 // console.log("cond1 && cond2 =", cond1 || cond2 || cond3); //true
 
-
 // FUNCTION
 
+function add(a, b) {
+  console.log("Sum of two numbers");
+  let sum = a + b;
+  console.log(`sum = ${sum}`);
+}
+
+let num1 = 2;
+let num2 = 4;
+add(num1, num2);
+
+// Arrow function
+let mult = (a, b) => { 
+  console.log("product of two numbers");
+  let prod = a * b;
+  console.log(`product = ${prod}`);
+};
+
+mult(2, 3);
