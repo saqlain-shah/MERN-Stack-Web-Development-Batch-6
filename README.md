@@ -4,6 +4,7 @@
 
 This branch belongs to JalalTrainee.
 
+
 Difference between Arrays and Objects in JavaScript
 
 ARRAYS:

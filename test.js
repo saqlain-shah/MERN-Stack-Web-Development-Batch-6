@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 console.log("Hello Jalal Hussain");
 
 // //block scope
@@ -181,6 +182,37 @@ function add(a, b) {
 let num1 = 2;
 let num2 = 4;
 add(num1, num2);
+=======
+//console.log("Hello Jalal Hussain");
+const a = 2;
+const myName = "Jalal HUssain";
+const isMale = true;
+//console.log(a);
+//console.log("Name =", myName);
+//console.log("isMale =", isMale);
+
+{
+  let a = 10;
+  // let a = 23;
+  // console.log(a);
+}
+{
+  let a = 2;
+  let b = 67;
+  // console.log(a);
+  //console.log("inside block  b =", b);
+}
+{
+  // var a = 10;
+  // const a = 45;
+  var b = 34;
+  // let a = 23;
+  // console.log(a);
+  // console.log("inside block  b =", b);
+}
+
+//console.log("outside block  b =", b);
+>>>>>>> 382a2d6c886273c1251b0f7f929debd1bbce1ba6
 
 // Arrow function
 let mult = (a, b) => { 
@@ -189,4 +221,42 @@ let mult = (a, b) => {
   console.log(`product = ${prod}`);
 };
 
+<<<<<<< HEAD
 mult(2, 3);
+=======
+//console.log(student);
+
+// let person2 = {
+//   fullName: "Jamal Hussain",
+//   age: 20,
+//   isMale: true,
+// };
+// // person = person1;
+// console.log(person2);
+
+// array
+let marks = [23, 34, 46, 56];
+
+//console.log(marks);
+
+let num1 = 1;
+let num2 = 2;
+//let sum = ++num1 + --num2;
+//console.log(sum);+
+if (num1 !== num2) {
+  console.log("True");
+} else console.log("False");
+
+if (num1 >num2 && num2+1==num2){
+ 
+  console.log("True");
+
+}else 
+  console.log("False");
+if(num1+num2||num1++>num2){
+     console.log("True");
+
+}else
+    console.log("False");
+
+>>>>>>> 382a2d6c886273c1251b0f7f929debd1bbce1ba6
