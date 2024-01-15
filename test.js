@@ -1,4 +1,3 @@
-
 console.log("Hello Jalal Hussain");
 
 // //block scope
@@ -213,7 +212,7 @@ const isMale = true;
 //console.log("outside block  b =", b);
 
 // Arrow function
-let mult = (a, b) => { 
+let mult = (a, b) => {
   console.log("product of two numbers");
   let prod = a * b;
   console.log(`product = ${prod}`);
@@ -243,14 +242,9 @@ if (num1 !== num2) {
   console.log("True");
 } else console.log("False");
 
-if (num1 >num2 && num2+1==num2){
- 
+if (num1 > num2 && num2 + 1 == num2) {
   console.log("True");
-
-}else 
-  console.log("False");
-if(num1+num2||num1++>num2){
-     console.log("True");
-
-}else
-    console.log("False");
+} else console.log("False");
+if (num1 + num2 || num1++ > num2) {
+  console.log("True");
+} else console.log("False");
