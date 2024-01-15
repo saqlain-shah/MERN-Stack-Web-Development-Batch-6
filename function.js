@@ -58,3 +58,27 @@ function displayMessage() {
   // console.log("Hi!");
 }
 displayMessage();
+//----------------------------------------------------
+// function
+function myFunc(theObject) {
+  theObject.make = "Toyota";
+}
+
+const mycar = {
+  make: "Honda",
+  model: "Accord",
+  year: 1998,
+};
+
+console.log(mycar.make); // "Honda"
+myFunc(mycar);
+console.log(mycar.make); // "Toyota"
+//-------------------------------------------------
+// program to find the square of a number
+// function is declared inside the variable
+let x = function (num) { return num * num };
+console.log(x(4));
+
+// can be used as variable value for other variables
+let y = x(3);
+console.log(y);
