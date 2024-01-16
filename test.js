@@ -203,7 +203,7 @@ console.log("Hello Jalal Hussain");
 // {
   // var a = 10;
   // const a = 45;
-  var b = 34;
+  // var b = 34;/
   // let a = 23;
   // console.log(a);
   // console.log("inside block  b =", b);
