@@ -255,7 +255,7 @@ let vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
 let myName = prompt("Enter your name:");
 const countvowels = (myName) => {
   let count = 0;
-  for (const char of myName) {
+  for (const char of myName) { // for-of loop
     if (
       char === vowels[0] ||
       char === vowels[1] ||
