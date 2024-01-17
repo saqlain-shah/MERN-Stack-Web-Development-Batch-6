@@ -57,6 +57,7 @@ const section = {
     }
 
 }
+
 const section_2 = {
     subject: 'web_developement',
     class: '9th',

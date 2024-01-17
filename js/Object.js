@@ -1,9 +1,29 @@
 <p id="show"></p>
-const person = {
+const persons= {
     fname: "John",
     lname: "Doe",
     age: 25
 };
+function a(){
+    for(var i=0; i<3;i++){
+   setTimeout(()=>{
+    console.log(i);
+   },i*1000)
+    }
+  }
+  a();
+  // call apply BigInt
+  var person ={
+    name:'khurshid',
+    hello:function(thing){
+      console.log(this.name+"say helo" +thing)
+    }
+  }
+  var person2 ={
+    name:'sarkar',
+  
+  }
+  person.hello.call(person2,['hello world'])
 
 let show = "";
 for (let x in person) {
@@ -24,7 +44,7 @@ delete persons2[age];
 console.log(persons2);
 // obj_protopes
 function Person(first, last, age, eyecolor) {
-    this.firstName = first;
+   this. firstName = first;
     this.lastName = last;
     this.age = age;
     this.eyeColor = eyecolor;
@@ -93,3 +113,11 @@ console.log(rest);
 ({ a: a1 = aDefault, b = bDefault } = obj);
 ({ a, b, ...rest } = obj);
 ({ a: a1, b: b1, ...rest } = obj);
+// basic object method(key,value pair)
+const object = {
+    obj1: 'baic',
+    obj2: 'inter',
+    obj3: 'advace',
+}
+object.obj1 = 'new log'
+console.log(object);
