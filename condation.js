@@ -5,4 +5,4 @@ const obj={
     gender:["mard",{jawn:"",
 buda:""},"awrat"]
 }
-console.log(obj.gender[1]);
+console.log(obj.gender[1])
