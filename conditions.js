@@ -24,4 +24,4 @@ const countvowels = (myName) => {
   return(count);
 };
 
-console.log("Number of vowels in '" + myName + "' is " + countvowels(myName) + ".");
+console.log(`Number of vowels in '${myName}' is ${countVowels(myName)}.`);
