@@ -40,8 +40,10 @@ else if(arr<g)
    }
   
 }
-console.log("Large No ",temp);
-console.log("Small No ",g);
+if (temp){
+console.log("Large No ",temp);}
+if (g){
+console.log("Small No ",g);}
 }
 
 let arr=[5,3,2];
