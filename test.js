@@ -253,7 +253,7 @@ console.log("Hello Jalal Hussain");
 
 let vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
 let myName = prompt("Enter your name:");
-const countvowels = (myName) => {
+const countVowels = (myName) => {
   let count = 0;
   for (const char of myName) { // for-of loop
     if (
@@ -275,4 +275,4 @@ const countvowels = (myName) => {
   return(count);
 };
 
-console.log("Number of vowels in '" + myName + "' is " + countvowels(myName) + ".");
+console.log(`Number of vowels in '${myName}' is ${countVowels(myName)}.`);
