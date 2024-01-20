@@ -51,3 +51,14 @@ let text = "";
 for (let x of language) {
   text += x;
 }
+console.log(text);
+let tun=Math.trunc(4.9)
+console.log(`teuncate value is ${tun}`);
+let a =10.1;
+if (Number.isInteger(a)){
+    console.log("Integer");
+}
+ else console.log("not a integer");
+ let text1 = "     Hello World!     ";
+ let text2 = text1.trimStart();
+ console.log(`value of txt1 ${text2.length }` +  `value of txt1 ${text1.length }`)
