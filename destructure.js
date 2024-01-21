@@ -24,11 +24,11 @@ const [firstName, lastName, ...otherInfo] = [
     "Oluwatobi", "Sofela", "CodeSweetly", "Web Developer", "Male"
   ];
   
-  // Invoke the otherInfo variable:
+  
   console.log(otherInfo); 
   
-  // The invocation above will return:
-  ["CodeSweetly", "Web Developer", "Male"]
+  
+  ["Code Sweetly", "Web Developer", "Male"]
 
   function sum(...a){
     let total=0;
@@ -40,3 +40,19 @@ const [firstName, lastName, ...otherInfo] = [
   console.log( `sum of three value ${sum(1,2,3,4)}`);
   console.log( `sum of five value ${sum(1,2,3,4,5)}`);
   console.log( `sum of six value ${sum(1,2,3,4,5,6)}`);
+
+
+
+  const numbers = [1, 3, 5, 7];
+  console.log(...numbers);
+
+  let obj1={
+  ab:20,
+  b:3,
+  c:4,
+  d:32,
+  e:30
+}
+const {ab ,...other}=obj1;
+console.log(ab);
+console.log(other);
