@@ -56,3 +56,13 @@ const [firstName, lastName, ...otherInfo] = [
 const {ab ,...other}=obj1;
 console.log(ab);
 console.log(other);
+
+
+function sums(...s){
+sum=0;
+for(let i=0;i<s.length; i++){
+  sum+=s[i];
+}
+console.log("sum of all number ",sum);
+}
+sums(1,2,3,4,5,6,7)
