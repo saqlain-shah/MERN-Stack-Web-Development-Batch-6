@@ -1,4 +1,5 @@
 function average(...args) {
+  console.log("Args", args);
   var sum = 0;
 
   for (var i = 0; i < args.length; i++) {
@@ -6,7 +7,7 @@ function average(...args) {
   }
 
   var avg = sum / args.length;
-  console.log("Average of the args: ", sum);
+  console.log("Average of the args: ", avg);
 }
 
-average(1, 2, 3, 4, 5);
+average(10, 20, 30, 40, 50, 60, 70, 80, 90, 100);
