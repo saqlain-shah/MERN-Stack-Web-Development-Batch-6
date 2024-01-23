@@ -1,13 +1,14 @@
 let pro=new Promise(function(a,b){
-    const res=true;
+    const res=false;
     if(res){
         a("done")
     }
     else{
-        b("error")
+        b("error");
     }
 });
 pro.then(
     re=>console.log(re),
     rej=>console.log(rej)
 )
+console.log(pro);
