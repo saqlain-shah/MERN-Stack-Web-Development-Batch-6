@@ -6,7 +6,6 @@ function helloWorld() {
   });
 }
 
-
 const msg = async function () {
   //Async Function Expression
   const msg = await helloWorld();

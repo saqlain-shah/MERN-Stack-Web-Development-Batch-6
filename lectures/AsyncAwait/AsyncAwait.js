@@ -6,9 +6,9 @@ function helloWorld() {
   });
 }
 
-
 async function msg() {
-  const msg = await helloWorld();
+  const msg = 
+   helloWorld();
   console.log("Message:", msg);
 }
 
