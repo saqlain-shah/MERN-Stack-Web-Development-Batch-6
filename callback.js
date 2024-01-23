@@ -73,12 +73,17 @@ function getData(dataId) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       console.log(`succesfully fetched data = ${dataId}`);
-      resolve("succesfully fetched all data");
+      if (resolve) {
+        resolve("succesfully fetched all data");
+      } else {
+        reject("some error to fetch data");
+      }
     }, 2000);
   });
 }
 
-(async function () { // IIFE
+(async function () {
+  // IIFE
   console.log("Fetching data 1...");
   await getData(1);
   console.log("Fetching data 2...");
@@ -87,5 +92,4 @@ function getData(dataId) {
   await getData(3);
   console.log("Fetching data 4...");
   await getData(4);
-}) ();
-
+})();
