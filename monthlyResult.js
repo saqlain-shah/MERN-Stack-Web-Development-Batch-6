@@ -1,19 +1,19 @@
 // cheak status of subject 
 let mark=57;
 if(mark>=90 && mark<=100){
-    console.log("Grade A++")
+    console.log("Grade A++");
 }
 else if(mark>=80 && mark<=90){
     console.log("Grade A+")
 }else if(mark>=70 && mark<=80){
-    console.log("Grade A")
+    console.log("Grade A");
 }
 else if(mark>=60 && mark<=70){
-    console.log("Grade B")
+    console.log("Grade B");
 }else if(mark>=50 && mark<=60){
     console.log("Grade C")
 }else if(mark>=40 && mark<=50){
-    console.log("Grade D  ")
+    console.log("Grade D  ");
 }
 
 //---------------------------------------------------------------------------
