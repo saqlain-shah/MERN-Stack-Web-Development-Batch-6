@@ -78,7 +78,7 @@ function getData(dataId) {
   });
 }
 
-(async function () {
+(async function () { // IIFE
   console.log("Fetching data 1...");
   await getData(1);
   console.log("Fetching data 2...");
