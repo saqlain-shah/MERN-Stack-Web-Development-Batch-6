@@ -6,10 +6,9 @@ var myObject = {
 };
 try {
   let userJSON = JSON.stringify(myObject);
-
-  
-  let userObj = JSON.parse(userJSON);
-  console.log(userObj);
+  console.log("JSON Data" ,userJSON);
+  let userObj = JSON.parse(myObject);
+  console.log("Object Data", userObj);
 } catch (e) {
   console.error(`Invalid  data!`);
 }
