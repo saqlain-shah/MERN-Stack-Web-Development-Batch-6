@@ -29,3 +29,21 @@ mypromis.then((m)=>{
 mypromis.catch((m)=>{
     console.log(m)
 })
+
+
+    //   let aw=undefined;
+        let promiseData= new Promise((resolved,reject)=>{
+            setTimeout(() => {
+            aw="Hello "
+            resolved("done")
+        
+   }, 3000);
+   })
+   promiseData.then(()=>{
+       console.log(aw);
+   })
+
+
+const res=new Promise((done,fail)=>{
+      
+})
