@@ -1,3 +1,5 @@
+const url = "www.rinor.pk/videostreaming"
+
 fetch(url, {
   method: "POST",
   headers: {
@@ -18,3 +20,4 @@ fetch(url, {
   }
 );
 
+fetch()
