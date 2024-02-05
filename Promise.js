@@ -34,8 +34,8 @@ mypromis.catch((m)=>{
     //   let aw=undefined;
         let promiseData= new Promise((resolved,reject)=>{
             setTimeout(() => {
-            aw="Hello "
-            resolved("done")
+            aw="Hello ";
+            resolved("done");
         
    }, 3000);
    })
