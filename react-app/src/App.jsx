@@ -1,3 +1,4 @@
+import Counter from "./components/Counter"
 import FirstComponent from  "./components/firstComponent"
 function App() {
 
@@ -5,6 +6,7 @@ function App() {
     <>
       <h1>My First React App Using Vite</h1>
       <FirstComponent/>
+      <Counter/>
     </>
   )
 }
