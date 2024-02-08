@@ -1,14 +1,21 @@
-import { useState } from "react";
+import { useState } from 'react'
 
-const Counter = () => {
-  const [count, setCount] = useState(0);
+export default function Counter() {
+  const [data , setData]= useState('')
+// function increment (){
+//   setData(data+1)
+// }
+// function decrement (){
+//   setData(data-1)
+// }
   return (
-    <div>
-      <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>Click me</button><br/>
-      <button onClick={()=>setCount(0)}>Reset</button>
-    </div>
-  );
-};
+    <>
+    <div>Counter</div>
+    <button onClick={()=>setData(data+1)}>
+    Increment</button>
+    <h1>{data}</h1>
+    <button onClick={()=>setData(data-1)}>Decrement</button>
+    </>
 
-export default Counter;
+  )
+}

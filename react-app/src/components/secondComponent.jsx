@@ -1,8 +1,9 @@
-export default function SecondComponent(data) {
+export default function SecondComponent(props) {
+  console.log(props)
   return (
     <>
       <div>SecondComponent</div>
-      <div>{data.data}</div>
+      <div>{props.props}</div>
     </>
   );
 }
