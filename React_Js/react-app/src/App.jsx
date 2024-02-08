@@ -5,13 +5,17 @@ import User from "./components/hooks/User.jsx";
 function App() {
   return (
     <>
-      <h2>Jalal Hussain</h2>
+      <h2>Raect Js</h2>
       <p>I'm Jalal Hussain, MERN stack intern at Rinor.</p>
+      <hr />
       <Home />
+      <hr />
       <Person prop={{ name: "Jalal Hussain", status: "student" }} />
+      <hr />
       <Hooks />
-      <br />
+      <hr />
       <User />
+      <hr />
     </>
   );
 }

@@ -1,7 +1,8 @@
 import { useState } from "react";
 
-const submitUserData = (name, email, password) => {
-  alert(`${name} , ${email}, ${password}`);
+const SubmitUserData = (name, email, password) => {
+  // alert(`${name} , ${email}, ${password}`);
+  console.log(`${name}, ${email}, ${password}`);
 };
 
 function User() {
@@ -12,7 +13,7 @@ function User() {
   };
   // Define onSubmit handler for the button
   const handleSubmit = () => {
-    submitUserData(user.name, user.email, user.password);
+    SubmitUserData(user.name, user.email, user.password);
   };
   // Define resetForm handler for the button
   const resetForm = () => {
@@ -49,6 +50,8 @@ function User() {
       <br />
       <button onClick={resetForm}>Reset</button>
       <button onClick={handleSubmit}>Submit</button>
+      <br />
+      <br />
     </>
   );
 }

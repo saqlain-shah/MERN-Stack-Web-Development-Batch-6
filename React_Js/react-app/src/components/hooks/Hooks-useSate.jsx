@@ -22,10 +22,14 @@ export default function Hooks() {
     <>
       <div>
         <h2>Hooks</h2>
-        <h3>counter value = {counter}</h3>
-        <br />
         <button onClick={increment}>Increment</button>
+        <br />
+        <br />
+        <h1>{counter}</h1>
+        <br />
+        <br />
         <button onClick={decrement}>Decrement</button>
+        <br />
         <br />
         <button onClick={reset}>resetValue</button>
       </div>
