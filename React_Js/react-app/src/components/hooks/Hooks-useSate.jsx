@@ -1,5 +1,5 @@
 import { useState } from "react";
-export default function Hooks() {
+export default function HooksUseState () {
   const [counter, setCounter] = useState(0);
   const increment = () => {
     setCounter(counter + 1);
@@ -21,7 +21,7 @@ export default function Hooks() {
   return (
     <>
       <div>
-        <h2>Hooks</h2>
+        <h2>useState Hook</h2>
         <button onClick={increment}>Increment</button>
         <br />
         <br />

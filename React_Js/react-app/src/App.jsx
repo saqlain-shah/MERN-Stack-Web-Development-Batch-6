@@ -2,6 +2,8 @@ import Home from "./components/Home.jsx";
 import Hooks from "./components/hooks/Hooks-useSate.jsx";
 import Person from "./components/props/Person.jsx";
 import User from "./components/hooks/User.jsx";
+import HooksUseEffect from "./components/hooks/Hooks-useEffect.jsx";
+import HooksUseState from "./components/hooks/Hooks-useSate.jsx";
 function App() {
   return (
     <>
@@ -12,10 +14,11 @@ function App() {
       <hr />
       <Person prop={{ name: "Jalal Hussain", status: "student" }} />
       <hr />
-      <Hooks />
+      <HooksUseState />
       <hr />
       <User />
       <hr />
+      <HooksUseEffect />
     </>
   );
 }
