@@ -1,13 +1,14 @@
-import Home from "./components/Home.jsx";
-import Hooks from "./components/hooks/Hooks-useSate.jsx";
-import Person from "./components/props/Person.jsx";
-import User from "./components/hooks/User.jsx";
-import HooksUseEffect from "./components/hooks/Hooks-useEffect.jsx";
-import HooksUseState from "./components/hooks/Hooks-useSate.jsx";
+// import Home from "./components/Home.jsx";
+// import Hooks from "./components/hooks/Hooks-useSate.jsx";
+// import Person from "./components/props/Person.jsx";
+// import User from "./components/hooks/User.jsx";
+// import HooksUseEffect from "./components/hooks/Hooks-useEffect.jsx";
+// import HooksUseState from "./components/hooks/Hooks-useSate.jsx";
+import MainContent from "./Portfolio/MainContent.jsx";
 function App() {
   return (
-    <>
-      <h2>Raect Js</h2>
+    <React.Fragment>
+      {/* <h2>Raect Js</h2>
       <p>I'm Jalal Hussain, MERN stack intern at Rinor.</p>
       <hr />
       <Home />
@@ -18,8 +19,9 @@ function App() {
       <hr />
       <User />
       <hr />
-      <HooksUseEffect />
-    </>
+      <HooksUseEffect /> */}
+      <MainContent />
+    </React.Fragment>
   );
 }
 
