@@ -4,7 +4,7 @@ import Portfolio from "./Portfolio";
 import Blogs from "./Blogs";
 import Contact from "./Contact";
 
-export default function Main() {
+export default function MainContainer() {
   return (
     <React.Fragment>
       <About />
