@@ -3,7 +3,7 @@ export default function SecondComponent(props) {
   return (
     <>
       <div>SecondComponent</div>
-      <div>{props.props}</div>
+      <div>{props}</div>
     </>
   );
 }
