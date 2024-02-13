@@ -1,13 +1,23 @@
 /* eslint-disable react/no-unescaped-entities */
 import  { useState } from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Grid, Box, TextField, Button, Modal, Typography } from '@mui/material';
 
 const LoginForm = () => {
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [formData, setFormData] = useState({
+    username: '',
+    email: '',
+    password: ''
+  });
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,7 +30,7 @@ const LoginForm = () => {
 
   return (
     <Grid container justifyContent="center">
-      <Grid item xs={12} sm={8} md={6} lg={4}>
+      <Grid item xs={12} sm={8} md={6} lg={12}>
         <Box sx={{ marginTop: 4 }}>
           <Typography variant="h4" align="center" gutterBottom>
             Login Form
@@ -31,8 +41,9 @@ const LoginForm = () => {
               variant="outlined"
               fullWidth
               size="small"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              name="username"
+              value={formData.username}
+              onChange={handleChange}
               margin="normal"
             />
             <TextField
@@ -40,8 +51,9 @@ const LoginForm = () => {
               variant="outlined"
               fullWidth
               size="small"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
               margin="normal"
             />
             <TextField
@@ -50,15 +62,16 @@ const LoginForm = () => {
               fullWidth
               size="small"
               type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
               margin="normal"
             />
             <Button type="submit" variant="contained" color="primary" fullWidth sx={{ marginTop: 2 }}>
               Submit
             </Button>
             <Typography variant="body1" sx={{ marginTop: 2 }} align="center">
-              {/* Don't have an account? <Link to="/register">Register here</Link> */}
+              Don't have an account? <Link to="/register">Register here</Link>
             </Typography>
           </form>
         </Box>
@@ -69,13 +82,13 @@ const LoginForm = () => {
             Submitted Data
           </Typography>
           <Typography variant="body1" gutterBottom>
-            Username: {username}
+            Username: {formData.username}
           </Typography>
           <Typography variant="body1" gutterBottom>
-            Email: {email}
+            Email: {formData.email}
           </Typography>
           <Typography variant="body1" gutterBottom>
-            Password: {password}
+            Password: {formData.password}
           </Typography>
         </Box>
       </Modal>

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-// import { Link } from 'react-router-dom';
+ import { Link } from 'react-router-dom';
 import { Grid, Box, TextField, Button, Typography } from '@mui/material';
 
 const RegisterForm = () => {
@@ -13,7 +13,8 @@ const RegisterForm = () => {
   };
 
   return (
-    <Grid container justifyContent="center">
+    <Grid style={{ border:"2px solid black "}}
+    container justifyContent="center">
       <Grid item xs={12} sm={8} md={6} lg={4}>
         <Box sx={{ marginTop: 4 }}>
           <Typography variant="h4" align="center" gutterBottom>
@@ -52,7 +53,7 @@ const RegisterForm = () => {
               Register
             </Button>
             <Typography variant="body1" sx={{ marginTop: 2 }} align="center">
-              {/* Already have an account? <Link to="/login">Login here</Link> */}
+               Already have an account? <Link to="/login">Login here</Link> 
             </Typography>
           </form>
         </Box>
