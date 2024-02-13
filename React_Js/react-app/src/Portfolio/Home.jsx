@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Header() {
+export default function Home() {
   return (
     <React.Fragment>
       <header className="container header active" id="home">
@@ -8,7 +8,7 @@ export default function Header() {
           <div className="left-header">
             <div className="h-shape"></div>
             <div className="image">
-              <img src="img/hero.png" alt="" />
+              <img src="./files/img/hero.png" alt="HERO png" />
             </div>
           </div>
           <div className="right-header">

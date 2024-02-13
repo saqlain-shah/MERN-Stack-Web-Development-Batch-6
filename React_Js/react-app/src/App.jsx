@@ -22,7 +22,9 @@ function App() {
       <User />
       <hr />
       <HooksUseEffect /> */}
-      <MainContent />
+      <div className="main-content">
+        <MainContent />
+      </div>
     </React.Fragment>
   );
 }

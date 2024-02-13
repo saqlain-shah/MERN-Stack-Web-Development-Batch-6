@@ -1,16 +1,25 @@
 import React from "react";
-import MainContainer from "./MainContainer";
+
+import Home from "./Home";
+import About from "./About";
+import Portfolio from "./Portfolio";
+import Blogs from "./Blogs";
+import Contact from "./Contact";
 import Controls from "./Controls";
 import Theme from "./Theme";
 
 export default function MainContent() {
   return (
     <React.Fragment>
-      <div className="main-content">
-        <MainContainer />
+      
+        <Home />
+        <About />
+        <Portfolio />
+        <Blogs />
+        <Contact />
         <Controls />
         <Theme />
-      </div>
+      
     </React.Fragment>
   );
 }
