@@ -4,10 +4,10 @@ export default function Header() {
   return (
     <React.Fragment>
       <header className="container header active" id="home">
-        <div classNameName="header-content">
-          <div classNameName="left-header">
-            <div classNameName="h-shape"></div>
-            <div classNameName="image">
+        <div className="header-content">
+          <div className="left-header">
+            <div className="h-shape"></div>
+            <div className="image">
               <img src="img/hero.png" alt="" />
             </div>
           </div>
