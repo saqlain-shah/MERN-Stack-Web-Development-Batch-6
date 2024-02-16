@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Grid, Box, TextField, Button, Typography } from "@mui/material";
 
-const RegisterPage = () => {
+export const RegisterPage = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

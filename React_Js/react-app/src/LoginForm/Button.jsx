@@ -19,22 +19,20 @@ const ContainedButton = () => {
     <Stack
     variant= "outlined"
       sx={{
-        direction: "row",
         rowGap: 2,
-        justifyContent: "center",
-        alignItems: "center",
         position: "absolute",
         top: "50%",
         left: "50%",
         transform: "translate(-50%, -50%)",
-        bgcolor: "background.paper",
-        p: 8, //padding
+        bgcolor: "lightgrey",
+        p: 4, //padding
         borderRadius: 2,
         borderColor: "divider",
       }}
     >
       <Typography variant="body1" sx={{ marginBottom: 1 }} align="center">
         Already have an account? Sign-in here:
+        </Typography>
         <Button
           variant="contained"
           size="large"
@@ -43,19 +41,18 @@ const ContainedButton = () => {
         >
           Sign in
         </Button>
-      </Typography>
-      <Divider />
-      <Typography variant="body1" sx={{ marginBottom: 1 }} align="center">
+      <Divider sx={{bgcolor:"grey"}}/>
+      <Typography variant="body1" sx={{ margin: 1 }} align="center">
         Don't have an account? Sign-up here:
+        </Typography>
         <Button
           variant="contained"
           size="large"
-          sx={{ marginTop: 2 }}
+          sx={{ margin: 1 }}
           onClick={handleRegisterClick}
         >
           Sign up
         </Button>
-      </Typography>
     </Stack>
   );
 };

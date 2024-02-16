@@ -48,20 +48,22 @@
 
 // export default App;
 
+// App.jsx
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import LoginForm from "./LoginForm/Login";
-import RegisterForm from "./LoginForm/Register";
-import ContainedButton from "./LoginForm/Button";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./LoginForm/Layout";
+import LoginPage from "./LoginForm/Login";
+import RegisterPage from "./LoginForm/Register";
 
 function App() {
   return (
     <React.Fragment>
       <BrowserRouter>
-        <ContainedButton />
         <Routes>
-          <Route path="/login" element={<LoginForm />} />
-          <Route path="/register" element={<RegisterForm />} />
+          <Route element={<Layout />}>
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </React.Fragment>
