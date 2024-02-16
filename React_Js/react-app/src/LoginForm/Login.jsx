@@ -1,21 +1,20 @@
-/* eslint-disable react/no-unescaped-entities */
-import  { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Grid, Box, TextField, Button, Modal, Typography } from '@mui/material';
+import { useState } from "react";
+import { Grid, Box, TextField, Button, Modal, Typography } from "@mui/material";
 
-const LoginForm = () => {
+const LoginPage = () => {
   const [formData, setFormData] = useState({
-    username: '',
-    email: '',
-    password: ''
+    username: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
   });
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prevState => ({
+    setFormData((prevState) => ({
       ...prevState,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -27,13 +26,12 @@ const LoginForm = () => {
   const handleCloseModal = () => {
     setIsModalOpen(false);
   };
-
   return (
     <Grid container justifyContent="center">
-      <Grid item xs={12} sm={8} md={6} lg={12}>
+      <Grid item xs={12} sm={8} md={6} lg={3}>
         <Box sx={{ marginTop: 4 }}>
           <Typography variant="h4" align="center" gutterBottom>
-            Login Form
+            Sign in
           </Typography>
           <form onSubmit={handleSubmit}>
             <TextField
@@ -67,17 +65,41 @@ const LoginForm = () => {
               onChange={handleChange}
               margin="normal"
             />
-            <Button type="submit" variant="contained" color="primary" fullWidth sx={{ marginTop: 2 }}>
+            <TextField
+              label="Confirm Password"
+              variant="outlined"
+              fullWidth
+              size="small"
+              type="password"
+              name="confirmPassword"
+              value={formData.confirmPassword}
+              onChange={handleChange}
+              margin="normal"
+            />
+            <Button
+              type="submit"
+              variant="contained"
+              color="primary"
+              sx={{ marginTop: 2, marginLeft: "35%" }}
+            >
               Submit
             </Button>
-            <Typography variant="body1" sx={{ marginTop: 2 }} align="center">
-              Don't have an account? <Link to="/register">Register here</Link>
-            </Typography>
           </form>
         </Box>
       </Grid>
       <Modal open={isModalOpen} onClose={handleCloseModal}>
-        <Box sx={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', bgcolor: 'background.paper', boxShadow: 24, p: 4, maxWidth: '80%' }}>
+        <Box
+          sx={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            bgcolor: "background.paper",
+            boxShadow: 24,
+            p: 4, //padding
+            maxWidth: "80%",
+          }}
+        >
           <Typography variant="h5" gutterBottom>
             Submitted Data
           </Typography>
@@ -96,4 +118,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default LoginPage;
