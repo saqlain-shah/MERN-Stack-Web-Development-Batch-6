@@ -1,19 +1,23 @@
-import FirstComponent from "./component/firsComponent";
-import Counter from "./component/Counter";
-import Login from "./component/login";
+// App.js
 
-function App() {
+import React from 'react';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import RegistrationForm from './component/reg';
+import LoginForm from './component/LoginFrom';
 
+const App = () => {
   return (
-    <>
-     {/* <h1>Anjum </h1>
-     <p>hello there </p>
-     <FirstComponent/>
-     <Counter/> */}
-     <Login/>
-    </>
+    <BrowserRouter>
+      <nav>
+        <Link to="/loginform"><button>Login</button></Link>
+        <Link to="/reg"><button>Reg</button></Link>
+      </nav>
+      <Routes>
+        <Route path="/reg" element={<RegistrationForm />} />
+        <Route path="/loginform" element={<LoginForm />} />
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
-export default App
-
+export default App;
