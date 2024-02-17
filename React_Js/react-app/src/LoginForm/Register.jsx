@@ -1,43 +1,95 @@
 import { useState } from "react";
-import { Grid, Box, TextField, Button, Typography } from "@mui/material";
+import {
+  Grid,
+  Box,
+  TextField,
+  Button,
+  Typography,
+  Modal,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogContentText,
+  DialogActions,
+} from "@mui/material";
 
 export const RegisterPage = () => {
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [age, setAge] = useState("");
-  const [gender, setGender] = useState("");
+  // create a state variable for the form data
+  const [formData, setFormData] = useState({
+    firstname: "",
+    lastname: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+    age: "",
+    gender: "",
+  });
 
+  // handle the input change events
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    // update the form data state with the new value
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  // create a state variable for the modal open
+  const [open, setOpen] = useState(false);
+
+  // handle the modal open event
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  // handle the modal close event
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  // handle the form submit event
   const handleSubmit = (e) => {
     e.preventDefault();
     // Add logic for handling form submission (registration)
+    // open the modal after the submission
+    handleOpen();
   };
 
   return (
-    <Grid container justifyContent="center">
+    <Grid container spacing={8} justifyContent="center" marginTop={2}>
       <Grid item xs={12} sm={8} md={6} lg={3}>
         <Box sx={{ marginTop: 4 }}>
           <Typography variant="h4" align="center" gutterBottom>
-            Sign up
+            Register
           </Typography>
           <form onSubmit={handleSubmit}>
             <TextField
-              label="Username"
-              variant="outlined"
+              label="First name"
+              name="firstname"
+              value={formData.firstname}
+              onChange={handleChange}
               fullWidth
               size="small"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
               margin="normal"
             />
+            <TextField
+              label="Last name"
+              name="lastname"
+              value={formData.lastname}
+              onChange={handleChange}
+              fullWidth
+              size="small"
+              margin="normal"
+            />
+
             <TextField
               label="Email"
               variant="outlined"
               fullWidth
               size="small"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={formData.email}
+              onChange={handleChange}
               margin="normal"
             />
             <TextField
@@ -46,8 +98,9 @@ export const RegisterPage = () => {
               fullWidth
               size="small"
               type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
               margin="normal"
             />
             <TextField
@@ -57,8 +110,8 @@ export const RegisterPage = () => {
               size="small"
               type="password"
               name="confirmPassword"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
+              value={formData.confirmPassword}
+              onChange={handleChange}
               margin="normal"
             />
             <TextField
@@ -67,8 +120,8 @@ export const RegisterPage = () => {
               fullWidth
               size="small"
               name="age"
-              value={age}
-              onChange={(e) => setAge(e.target.value)}
+              value={formData.age}
+              onChange={handleChange}
               margin="normal"
             />
             <TextField
@@ -77,8 +130,8 @@ export const RegisterPage = () => {
               fullWidth
               size="small"
               name="gender"
-              value={gender}
-              onChange={(e) => setGender(e.target.value)}
+              value={formData.gender}
+              onChange={handleChange}
               margin="normal"
             />
             <Button
@@ -92,6 +145,23 @@ export const RegisterPage = () => {
           </form>
         </Box>
       </Grid>
+
+      {/* add the modal component with the dialog component */}
+      <Modal open={open} onClose={handleClose}>
+        <Dialog open={open} onClose={handleClose}>
+          <DialogTitle>Congratulations!</DialogTitle>
+          <DialogContent>
+            <DialogContentText>
+              You are successfully registered.
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleClose} color="primary">
+              OK
+            </Button>
+          </DialogActions>
+        </Dialog>
+      </Modal>
     </Grid>
   );
 };

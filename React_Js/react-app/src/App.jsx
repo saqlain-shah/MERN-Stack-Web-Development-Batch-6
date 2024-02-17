@@ -50,24 +50,74 @@
 
 // App.jsx
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./LoginForm/Layout";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import {
+  AppBar,
+  Toolbar,
+  ImageList,
+  ImageListItem,
+  Button,
+  Box,
+} from "@mui/material";
 import LoginPage from "./LoginForm/Login";
 import RegisterPage from "./LoginForm/Register";
+import About from "./LoginForm/About";
+import Contact from "./LoginForm/Contact";
 
-function App() {
+const App = () => {
+  const menuItems = [
+    { title: "Login", path: "/login" },
+    { title: "Register", path: "/register" },
+    { title: "About", path: "/about" },
+    { title: "Contact", path: "/contact" },
+  ];
   return (
     <React.Fragment>
       <BrowserRouter>
+        <AppBar position="fixed" style={{ backgroundColor: "#1769aa" }}>
+          <Toolbar>
+            {/* Logo on the right */}
+            <Box
+              sx={{
+                flexGrow: 1,
+                display: "flex",
+                justifyContent: "flex-start",
+              }}
+            >
+              <ImageList cols={1} rowHeight={15}>
+                <ImageListItem>
+                  <img srcSet="./LoginForm/assets/logo.png" alt="RINOR" />
+                </ImageListItem>
+              </ImageList>
+            </Box>
+
+            {/* Menu items on the left */}
+            {menuItems.map((item) => (
+              <Button
+                key={item.title}
+                color="inherit"
+                sx={{
+                  marginLeft: 2,
+                  "&:hover": { backgroundColor: "#bbdefb", color: "#1769aa" },
+                }}
+                component={Link} // Use the Link component as the root component of Button
+                to={item.path} // Set the navigation path
+              >
+                {item.title}
+              </Button>
+            ))}
+          </Toolbar>
+        </AppBar>
+
         <Routes>
-          <Route element={<Layout />}>
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/register" element={<RegisterPage />} />
-          </Route>
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </BrowserRouter>
     </React.Fragment>
   );
-}
+};
 
 export default App;

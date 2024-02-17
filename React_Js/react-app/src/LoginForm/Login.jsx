@@ -8,8 +8,7 @@ const LoginPage = () => {
     password: "",
     confirmPassword: "",
   });
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({
@@ -17,7 +16,8 @@ const LoginPage = () => {
       [name]: value,
     }));
   };
-
+  
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsModalOpen(true);
@@ -27,11 +27,11 @@ const LoginPage = () => {
     setIsModalOpen(false);
   };
   return (
-    <Grid container justifyContent="center">
+    <Grid container spacing={8} justifyContent="center" marginTop={2}>
       <Grid item xs={12} sm={8} md={6} lg={3}>
         <Box sx={{ marginTop: 4 }}>
           <Typography variant="h4" align="center" gutterBottom>
-            Sign in
+            Login
           </Typography>
           <form onSubmit={handleSubmit}>
             <TextField
