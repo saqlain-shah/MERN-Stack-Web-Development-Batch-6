@@ -3,12 +3,14 @@ import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import { AppBar, Toolbar, Typography, Button, Box } from '@mui/material';
 import LoginForm from "./components/Login";
 import RegisterForm from "./components/Register";
+import ProductCard from "./components/ProductCard";
 const App = () => {
 
   const menuItems = [
     { title: 'Login', path: '/login' },
     { title: 'Register', path: '/register' },
     { title: 'About', path: '/about' },
+    { title: 'Shop', path: '/shop' },
     { title: 'Contact', path: '/contact' },
   ];
   return (
@@ -44,6 +46,8 @@ const App = () => {
           <Route path="/login" element={<LoginForm />} />
           <Route path="/register" element={<RegisterForm />} />
           <Route path="/about" element={<h4>About Page</h4>} />
+          <Route path="/shop" element={<ProductCard/>} />
+
           <Route path="/contact" element={ <h4>Contact Page</h4>} />
         </Routes>
       </BrowserRouter>
