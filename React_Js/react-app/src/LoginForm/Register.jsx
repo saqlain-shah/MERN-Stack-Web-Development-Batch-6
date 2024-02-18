@@ -11,7 +11,8 @@ import {
   DialogContent,
   DialogContentText,
   DialogActions,
-  Checkbox,
+  RadioGroup,
+  Radio,
   FormControlLabel,
 } from "@mui/material";
 
@@ -125,33 +126,33 @@ export const RegisterPage = () => {
               onChange={handleChange}
               margin="normal"
             />
-            
             <Box sx={{ margin: 1 }}>
               <Typography variant="h6" sx={{ marginTop: 2 }}>
                 Gender
               </Typography>
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    name="gender"
+              <RadioGroup
+                name="gender"
+                defaultValue="male"
+                onChange={handleChange}
+              >
+                <Box sx={{ display: "flex" }}>
+                  <FormControlLabel
+                    control={<Radio />}
                     value="male"
-                    checked={formData.gender === "male"}
-                    onChange={handleChange}
+                    label="Male"
                   />
-                }
-                label="Male"
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    name="gender"
+                  <FormControlLabel
+                    control={<Radio />}
                     value="female"
-                    checked={formData.gender === "female"}
-                    onChange={handleChange}
+                    label="Female"
                   />
-                }
-                label="Female"
-              />
+                  <FormControlLabel
+                    control={<Radio />}
+                    value="other"
+                    label="Other"
+                  />
+                </Box>
+              </RadioGroup>
             </Box>
             <Button
               type="submit"
