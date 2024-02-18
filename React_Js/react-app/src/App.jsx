@@ -51,14 +51,7 @@
 // App.jsx
 import React from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import {
-  AppBar,
-  Toolbar,
-  ImageList,
-  ImageListItem,
-  Button,
-  Box,
-} from "@mui/material";
+import { AppBar, Toolbar, Button, Box } from "@mui/material";
 import LoginPage from "./LoginForm/Login";
 import RegisterPage from "./LoginForm/Register";
 import About from "./LoginForm/About";
@@ -75,20 +68,20 @@ const App = () => {
     <React.Fragment>
       <BrowserRouter>
         <AppBar position="fixed" style={{ backgroundColor: "#1769aa" }}>
-          <Toolbar>
+          <Toolbar sx={{p:0.5}}>
             {/* Logo on the right */}
             <Box
               sx={{
                 flexGrow: 1,
                 display: "flex",
                 justifyContent: "flex-start",
+                width: 100,
+                height: 50,
+                maxHeight: 70,
+                objectFit: "scale-down"
               }}
             >
-              <ImageList cols={1} rowHeight={15}>
-                <ImageListItem>
-                  <img srcSet="./LoginForm/assets/logo.png" alt="RINOR" />
-                </ImageListItem>
-              </ImageList>
+              <img src="./src/LoginForm/assets/logo.png" alt="RINOR" />
             </Box>
 
             {/* Menu items on the left */}

@@ -11,6 +11,8 @@ import {
   DialogContent,
   DialogContentText,
   DialogActions,
+  Checkbox,
+  FormControlLabel,
 } from "@mui/material";
 
 export const RegisterPage = () => {
@@ -82,7 +84,6 @@ export const RegisterPage = () => {
               size="small"
               margin="normal"
             />
-
             <TextField
               label="Email"
               variant="outlined"
@@ -124,16 +125,34 @@ export const RegisterPage = () => {
               onChange={handleChange}
               margin="normal"
             />
-            <TextField
-              label="Gender"
-              variant="outlined"
-              fullWidth
-              size="small"
-              name="gender"
-              value={formData.gender}
-              onChange={handleChange}
-              margin="normal"
-            />
+            
+            <Box sx={{ margin: 1 }}>
+              <Typography variant="h6" sx={{ marginTop: 2 }}>
+                Gender
+              </Typography>
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    name="gender"
+                    value="male"
+                    checked={formData.gender === "male"}
+                    onChange={handleChange}
+                  />
+                }
+                label="Male"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    name="gender"
+                    value="female"
+                    checked={formData.gender === "female"}
+                    onChange={handleChange}
+                  />
+                }
+                label="Female"
+              />
+            </Box>
             <Button
               type="submit"
               variant="contained"

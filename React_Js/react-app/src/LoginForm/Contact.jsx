@@ -104,9 +104,6 @@ export default function ContactForm() {
                     fullWidth
                     required
                     type="tel"
-                    inputProps={{
-                      pattern: "[0-9]{4}-[0-9]{7}",
-                    }}
                   />
                 </Grid>
                 <Grid item xs={12}>
@@ -135,41 +132,35 @@ export default function ContactForm() {
             </form>
             {/* add the links inside the Grid container */}
             <Grid item xs={12} textAlign={"center"} margin={2}>
-              <Link
-                href="https://www.linkedin.com/in/your-profile"
-                target="_blank"
-              >
+              <Link href="#" target="">
                 <LinkedIn
                   fontSize="medium"
                   color="primary"
                   sx={{ margin: "0.67rem" }}
                 />
               </Link>
-              <Link href="https://github.com/your-username" target="_blank">
+              <Link href="" target="">
                 <GitHub
                   fontSize="medium"
                   color="primary"
                   sx={{ margin: "0.67rem" }}
                 />
               </Link>
-              <Link href="https://twitter.com/your-handle" target="_blank">
+              <Link href="" target="">
                 <Twitter
                   fontSize="medium"
                   color="primary"
                   sx={{ margin: "0.67rem" }}
                 />
               </Link>
-              <Link href="https://www.facebook.com/your-page" target="_blank">
+              <Link href="" target="">
                 <Facebook
                   fontSize="medium"
                   color="primary"
                   sx={{ margin: "0.67rem" }}
                 />
               </Link>
-              <Link
-                href="https://www.instagram.com/your-account"
-                target="_blank"
-              >
+              <Link href="" target="">
                 <Instagram
                   fontSize="medium"
                   color="primary"
