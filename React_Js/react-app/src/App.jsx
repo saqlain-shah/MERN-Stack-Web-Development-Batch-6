@@ -56,19 +56,21 @@ import LoginPage from "./LoginForm/Login";
 import RegisterPage from "./LoginForm/Register";
 import About from "./LoginForm/About";
 import Contact from "./LoginForm/Contact";
-
+import ProductCard from "./LoginForm/ProductCard";
+import SingleProduct from "./LoginForm/SingleProduct";
 const App = () => {
   const menuItems = [
     { title: "Login", path: "/login" },
     { title: "Register", path: "/register" },
     { title: "About", path: "/about" },
     { title: "Contact", path: "/contact" },
+    { title: "Shop", path: "/shop" },
   ];
   return (
     <React.Fragment>
       <BrowserRouter>
         <AppBar position="fixed" style={{ backgroundColor: "#1769aa" }}>
-          <Toolbar sx={{p:0.5}}>
+          <Toolbar sx={{ p: 0.5 }}>
             {/* Logo on the right */}
             <Box
               sx={{
@@ -78,7 +80,7 @@ const App = () => {
                 width: 100,
                 height: 50,
                 maxHeight: 70,
-                objectFit: "scale-down"
+                objectFit: "scale-down",
               }}
             >
               <img src="./src/LoginForm/assets/logo.png" alt="RINOR" />
@@ -107,6 +109,8 @@ const App = () => {
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/shop" element={<ProductCard />} />
+          <Route path="/products/:id" element={<SingleProduct />} />
         </Routes>
       </BrowserRouter>
     </React.Fragment>

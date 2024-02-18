@@ -28,7 +28,7 @@ const LoginPage = () => {
   };
   return (
     <Grid container spacing={8} justifyContent="center" marginTop={2}>
-      <Grid item xs={12} sm={8} md={6} lg={3}>
+      <Grid item xs={10} sm={8} md={6} lg={4}>
         <Box sx={{ marginTop: 4 }}>
           <Typography variant="h4" align="center" gutterBottom>
             Login
@@ -38,6 +38,7 @@ const LoginPage = () => {
               label="Username"
               variant="outlined"
               fullWidth
+              required
               size="small"
               name="username"
               value={formData.username}
@@ -48,6 +49,7 @@ const LoginPage = () => {
               label="Email"
               variant="outlined"
               fullWidth
+              required
               size="small"
               name="email"
               value={formData.email}
@@ -58,6 +60,7 @@ const LoginPage = () => {
               label="Password"
               variant="outlined"
               fullWidth
+              required
               size="small"
               type="password"
               name="password"
@@ -69,6 +72,7 @@ const LoginPage = () => {
               label="Confirm Password"
               variant="outlined"
               fullWidth
+              required
               size="small"
               type="password"
               name="confirmPassword"

@@ -61,7 +61,7 @@ export const RegisterPage = () => {
 
   return (
     <Grid container spacing={8} justifyContent="center" marginTop={2}>
-      <Grid item xs={12} sm={8} md={6} lg={3}>
+      <Grid item xs={10} sm={8} md={6} lg={4}>
         <Box sx={{ marginTop: 4 }}>
           <Typography variant="h4" align="center" gutterBottom>
             Register
@@ -73,6 +73,7 @@ export const RegisterPage = () => {
               value={formData.firstname}
               onChange={handleChange}
               fullWidth
+              required
               size="small"
               margin="normal"
             />
@@ -89,6 +90,7 @@ export const RegisterPage = () => {
               label="Email"
               variant="outlined"
               fullWidth
+              required
               size="small"
               value={formData.email}
               onChange={handleChange}
@@ -98,6 +100,7 @@ export const RegisterPage = () => {
               label="Password"
               variant="outlined"
               fullWidth
+              required
               size="small"
               type="password"
               name="password"
@@ -109,6 +112,7 @@ export const RegisterPage = () => {
               label="Confirm Password"
               variant="outlined"
               fullWidth
+              required
               size="small"
               type="password"
               name="confirmPassword"
@@ -120,6 +124,7 @@ export const RegisterPage = () => {
               label="Age"
               variant="outlined"
               fullWidth
+              required
               size="small"
               name="age"
               value={formData.age}
