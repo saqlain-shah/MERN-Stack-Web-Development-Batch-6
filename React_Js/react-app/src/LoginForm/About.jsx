@@ -1,8 +1,19 @@
 import React from "react";
 // import the MUI need
-import { Grid, Typography, Button, Box, Avatar, CardContent, CardHeader, Chip, Rating, Divider } from "@mui/material";
+import {
+  Grid,
+  Typography,
+  Button,
+  Box,
+  Avatar,
+  CardContent,
+  CardHeader,
+  Chip,
+  Rating,
+  Divider,
+} from "@mui/material";
 // import the mui material components you need
-import {  } from "@mui/material";
+import {} from "@mui/material";
 
 export default function About() {
   return (
@@ -12,7 +23,7 @@ export default function About() {
           <Typography variant="h3">About me</Typography>
         </Grid>
         <Grid item xs={12} md={6} marginLeft={2} marginRight={2}>
-          <Typography variant="h4">Information About me</Typography>
+          <Typography variant="h4">Jalal Hussain</Typography>
           <Typography variant="body1">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
             labore nihil obcaecati consequatur. Debitis error doloremque, vero
@@ -31,9 +42,10 @@ export default function About() {
             </Button>
           </Box>
         </Grid>
-        
-        <Grid item xs={12} marginLeft={2} marginRight={2} marginTop={2}>
-        <Divider sx={{bgcolor:"grey.300"}}/>
+        <Grid item xs={12} marginLeft={2} marginRight={2}>
+          <Divider sx={{ bgcolor: "grey.300" }} />
+        </Grid>
+        <Grid item xs={12} marginLeft={2} marginRight={2}>
           <Typography variant="h4">My Skills</Typography>
           <Grid container spacing={2}>
             <Grid item xs={6} md={4}>
@@ -107,8 +119,10 @@ export default function About() {
             {/* add more skill items here */}
           </Grid>
         </Grid>
-        <Grid item xs={12} marginLeft={2} marginRight={2} marginTop={2}>
-        <Divider sx={{bgcolor:"grey.300"}}/>
+        <Grid item xs={12} marginLeft={2} marginRight={2}>
+          <Divider sx={{ bgcolor: "grey.300" }} />
+        </Grid>
+        <Grid item xs={12} marginLeft={2} marginRight={2}>
           <Typography variant="h4">My Projects</Typography>
           <Grid container spacing={2}>
             <Grid item xs={12} md={6}>

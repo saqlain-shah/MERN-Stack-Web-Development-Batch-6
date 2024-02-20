@@ -13,50 +13,83 @@ import { useParams } from "react-router-dom";
 
 const SingleProduct = () => {
   const [product, setProduct] = useState(null);
-  const { id } = useParams();
+  const { id } = useParams(); // Get the product id from the URL
 
   useEffect(() => {
+    // Fetch the product data from the API using the id
     axios
       .get(`https://dummyjson.com/products/${id}`)
       .then((response) => {
+        // Set the product state with the response data
         setProduct(response.data);
       })
       .catch((error) => {
+        // Handle the error
         console.error("There was an error fetching the data:", error);
       });
-  }, [id]);
+  }, [id]); // Add id as a dependency to re-run the effect when it changes
 
+  // Return a loading message if the product is not fetched yet
+  if (!product) {
+    return <p>Loading...</p>;
+  }
+
+  // Return a card component with the product details
   return (
-    <Grid container justifyContent="center" spacing={10} marginTop={15}>
+    <Grid container justifyContent={"center"} spacing={10} marginTop={15}>
+      <Skeleton variant="rectangular" height={300} key={!product}/>
       <Card sx={{ maxWidth: 500 }}>
         <CardMedia
           component="img"
           height="300"
-          image={product?.thumbnail || <Skeleton />}
-          alt={product?.title || ""}
+          image={product.thumbnail}
+          alt={product.title}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            {product?.title || <Skeleton />}
+            {product.title}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            {product?.description || <Skeleton />}
+            {product.description}
           </Typography>
           <Typography variant="h6" component="div" sx={{ marginTop: 1 }}>
-            ${product?.price || <Skeleton />}
+            ${product.price}
           </Typography>
           <Chip
-            label={`${product?.discountPercentage}% off` || <Skeleton />}
+            label={`${product.discountPercentage}% off`}
             color="success"
             sx={{ marginTop: 1, marginRight: 1 }}
           />
           <Chip
-            label={`${product?.rating} stars` || <Skeleton />}
+            label={`${product.rating} stars`}
             color="primary"
             sx={{ marginTop: 1, marginRight: 1 }}
           />
+          <Chip
+            label={`${product.stock} in stock`}
+            color="info"
+            sx={{ marginTop: 1, marginRight: 1 }}
+          />
+          <Typography variant="subtitle1" component="div" sx={{ marginTop: 1 }}>
+            Brand: {product.brand}
+          </Typography>
+          <Typography variant="subtitle1" component="div" sx={{ marginTop: 1 }}>
+            Category: {product.category}
+          </Typography>
         </CardContent>
       </Card>
+
+      <Grid item xs={12} sm={6} md={4}>
+        <Card>
+          <Skeleton variant="rectangular" width="100%" height={190} />
+          <CardContent>
+            <Skeleton variant="text" width="60%" />
+            <Skeleton variant="text" />
+            <Skeleton variant="text" />
+            <Skeleton variant="rectangular" width="80%" height={20} />    
+          </CardContent>
+        </Card>
+      </Grid>
     </Grid>
   );
 };
