@@ -29,67 +29,71 @@ const SingleProduct = () => {
       });
   }, [id]); // Add id as a dependency to re-run the effect when it changes
 
-  // Return a loading message if the product is not fetched yet
-  if (!product) {
-    return <p>Loading...</p>;
-  }
-
   // Return a card component with the product details
   return (
-    <Grid container justifyContent={"center"} spacing={10} marginTop={15}>
-      <Skeleton variant="rectangular" height={300} key={!product}/>
-      <Card sx={{ maxWidth: 500 }}>
-        <CardMedia
-          component="img"
-          height="300"
-          image={product.thumbnail}
-          alt={product.title}
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            {product.title}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {product.description}
-          </Typography>
-          <Typography variant="h6" component="div" sx={{ marginTop: 1 }}>
-            ${product.price}
-          </Typography>
-          <Chip
-            label={`${product.discountPercentage}% off`}
-            color="success"
-            sx={{ marginTop: 1, marginRight: 1 }}
+    <Grid container justifyContent={"center"} spacing={10} marginTop={10}>
+      {product ? (
+        <Card sx={{ maxWidth: 500 }}>
+          <CardMedia
+            component="img"
+            height="300"
+            image={product.thumbnail}
+            alt={product.title}
           />
-          <Chip
-            label={`${product.rating} stars`}
-            color="primary"
-            sx={{ marginTop: 1, marginRight: 1 }}
-          />
-          <Chip
-            label={`${product.stock} in stock`}
-            color="info"
-            sx={{ marginTop: 1, marginRight: 1 }}
-          />
-          <Typography variant="subtitle1" component="div" sx={{ marginTop: 1 }}>
-            Brand: {product.brand}
-          </Typography>
-          <Typography variant="subtitle1" component="div" sx={{ marginTop: 1 }}>
-            Category: {product.category}
-          </Typography>
-        </CardContent>
-      </Card>
-
-      <Grid item xs={12} sm={6} md={4}>
-        <Card>
-          <Skeleton variant="rectangular" width="100%" height={190} />
           <CardContent>
-            <Skeleton variant="text" width="60%" />
-            <Skeleton variant="text" />
-            <Skeleton variant="text" />
-            <Skeleton variant="rectangular" width="80%" height={20} />    
+            <Typography gutterBottom variant="h5" component="div">
+              {product.title}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              {product.description}
+            </Typography>
+            <Typography variant="h6" component="div" sx={{ marginTop: 1 }}>
+              ${product.price}
+            </Typography>
+            <Chip
+              label={`${product.discountPercentage}% off`}
+              color="success"
+              sx={{ marginTop: 1, marginRight: 1 }}
+            />
+            <Chip
+              label={`${product.rating} stars`}
+              color="primary"
+              sx={{ marginTop: 1, marginRight: 1 }}
+            />
+            <Chip
+              label={`${product.stock} in stock`}
+              color="info"
+              sx={{ marginTop: 1, marginRight: 1 }}
+            />
+            <Typography
+              variant="subtitle1"
+              component="div"
+              sx={{ marginTop: 1 }}
+            >
+              Brand: {product.brand}
+            </Typography>
+            <Typography
+              variant="subtitle1"
+              component="div"
+              sx={{ marginTop: 1 }}
+            >
+              Category: {product.category}
+            </Typography>
           </CardContent>
         </Card>
-      </Grid>
+      ) : (
+        <Grid item xs={12} sm={8} md={6} lg={4} sx={{ mr: 4, ml: 4 }}>
+          <Card>
+            <Skeleton variant="rectangular" width="100%" height={250} />
+            <CardContent>
+              <Skeleton variant="text" width="60%" />
+              <Skeleton variant="text" />
+              <Skeleton variant="text" />
+              <Skeleton variant="rectangular" width="80%" height={20} />
+            </CardContent>
+          </Card>
+        </Grid>
+      )}
     </Grid>
   );
 };
