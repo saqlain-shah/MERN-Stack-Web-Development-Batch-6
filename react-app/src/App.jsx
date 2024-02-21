@@ -4,6 +4,7 @@ import { AppBar, Toolbar, Typography, Button, Box } from '@mui/material';
 import LoginForm from "./components/Login";
 import RegisterForm from "./components/Register";
 import ProductCard from "./components/ProductCard";
+import SingleProduct from "./components/SingleCard";
 const App = () => {
 
   const menuItems = [
@@ -47,7 +48,7 @@ const App = () => {
           <Route path="/register" element={<RegisterForm />} />
           <Route path="/about" element={<h4>About Page</h4>} />
           <Route path="/shop" element={<ProductCard/>} />
-
+          <Route path="/products/:id" element={<SingleProduct/>} />
           <Route path="/contact" element={ <h4>Contact Page</h4>} />
         </Routes>
       </BrowserRouter>
