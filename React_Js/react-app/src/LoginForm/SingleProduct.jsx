@@ -31,12 +31,13 @@ const SingleProduct = () => {
 
   // Return a card component with the product details
   return (
-    <Grid container justifyContent={"center"} spacing={10} marginTop={10}>
+    <Grid container justifyContent={"center"} spacing={10} marginTop={15}>
       {product ? (
         <Card sx={{ maxWidth: 500 }}>
           <CardMedia
             component="img"
-            height="300"
+            width="500"
+            height="375"
             image={product.thumbnail}
             alt={product.title}
           />
@@ -81,7 +82,7 @@ const SingleProduct = () => {
             </Typography>
           </CardContent>
         </Card>
-      ) : (
+      ) : 
         <Grid item xs={12} sm={8} md={6} lg={4} sx={{ mr: 4, ml: 4 }}>
           <Card>
             <Skeleton variant="rectangular" width="100%" height={250} />
@@ -93,7 +94,7 @@ const SingleProduct = () => {
             </CardContent>
           </Card>
         </Grid>
-      )}
+      }
     </Grid>
   );
 };
