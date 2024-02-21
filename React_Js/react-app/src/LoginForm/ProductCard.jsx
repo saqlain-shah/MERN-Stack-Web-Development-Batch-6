@@ -28,7 +28,7 @@ function ProductCard() {
   }, []);
 
   return (
-    <Grid container justifyContent={"space-around"} spacing={10} marginTop={2}>
+    <Grid container spacing={10} marginTop={2}>
       {products
         ? products.map((product) => (
             <Grid item xs={12} sm={6} md={4} padding={1} key={product.id}>
