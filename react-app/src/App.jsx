@@ -5,14 +5,17 @@ import LoginForm from "./components/Login";
 import RegisterForm from "./components/Register";
 import ProductCard from "./components/ProductCard";
 import SingleProduct from "./components/SingleCard";
+import MultiStepForm from "./components/Form/Index";
 const App = () => {
 
   const menuItems = [
     { title: 'Login', path: '/login' },
     { title: 'Register', path: '/register' },
+    { title: 'WizardFrom', path: '/form' },
     { title: 'About', path: '/about' },
     { title: 'Shop', path: '/shop' },
     { title: 'Contact', path: '/contact' },
+
   ];
   return (
     <React.Fragment>
@@ -44,6 +47,7 @@ const App = () => {
 
 
         <Routes>
+        <Route path="/form" element={<MultiStepForm />} />
           <Route path="/login" element={<LoginForm />} />
           <Route path="/register" element={<RegisterForm />} />
           <Route path="/about" element={<h4>About Page</h4>} />
