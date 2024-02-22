@@ -72,7 +72,7 @@ export default function ContactForm() {
           <Grid item xs={12} textAlign={"center"}>
             <Typography variant="h3">Contact me</Typography>
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={12}> 
             <form onSubmit={handleSubmit}>
               <Grid container spacing={2}>
                 <Grid item xs={12} md={6}>

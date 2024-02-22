@@ -39,7 +39,7 @@ const LoginPage = () => {
               variant="outlined"
               fullWidth
               required
-              size="small"
+              size="medium"
               name="username"
               value={formData.username}
               onChange={handleChange}
@@ -50,7 +50,7 @@ const LoginPage = () => {
               variant="outlined"
               fullWidth
               required
-              size="small"
+              size="medium"
               name="email"
               value={formData.email}
               onChange={handleChange}
@@ -61,7 +61,7 @@ const LoginPage = () => {
               variant="outlined"
               fullWidth
               required
-              size="small"
+              size="medium"
               type="password"
               name="password"
               value={formData.password}
@@ -73,7 +73,7 @@ const LoginPage = () => {
               variant="outlined"
               fullWidth
               required
-              size="small"
+              size="medium"
               type="password"
               name="confirmPassword"
               value={formData.confirmPassword}

@@ -22,24 +22,36 @@ export default function About() {
         <Grid item xs={12} textAlign={"center"}>
           <Typography variant="h3">About me</Typography>
         </Grid>
-        <Grid item xs={12} md={6} marginLeft={2} marginRight={2}>
-          <Typography variant="h4">Jalal Hussain</Typography>
-          <Typography variant="body1">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
-            labore nihil obcaecati consequatur. Debitis error doloremque, vero
-            eos vel nemo eius voluptatem dicta tenetur modi musica delectus
-            dolore fugiat exercitationem a, ipsum quidem quo enim natus
-            accusamus labore dolores nam. Unde. Lorem ipsum dolor sit amet
-            consectetur, adipisicing elit. Harum non necessitatibus deleniti eum
-            soluta.. <br /> <br /> La musica delectus dolore fugiat
-            exercitationem a, ipsum quidem quo enim natus accusamus labore
-            dolores nam. Unde. Lorem ipsum dolor sit amet consectetur,
-            adipisicing elit. Harum non necessitatibus deleniti eum soluta.
-          </Typography>
-          <Box sx={{ mt: 2 }}>
-            <Button variant="contained" href="#">
-              Download CV
-            </Button>
+        <Grid item>
+          <Box sx={{ p: 2, display: "flex" }}>
+            <Grid item xs={12} md={6}>
+              <img
+                width="100%"
+                src="./src/LoginForm/assets/about_bg.jpg"
+                alt="About"
+              />
+            </Grid>
+            <Grid item xs={12} md={6} marginLeft={2} marginRight={2}>
+              <Typography variant="h4">Jalal Hussain</Typography>
+              <Typography variant="body1">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
+                labore nihil obcaecati consequatur. Debitis error doloremque,
+                vero eos vel nemo eius voluptatem dicta tenetur modi musica
+                delectus dolore fugiat exercitationem a, ipsum quidem quo enim
+                natus accusamus labore dolores nam. Unde. Lorem ipsum dolor sit
+                amet consectetur, adipisicing elit. Harum non necessitatibus
+                deleniti eum soluta.. <br /> <br /> La musica delectus dolore
+                fugiat exercitationem a, ipsum quidem quo enim natus accusamus
+                labore dolores nam. Unde. Lorem ipsum dolor sit amet
+                consectetur, adipisicing elit. Harum non necessitatibus deleniti
+                eum soluta.
+              </Typography>
+              <Box sx={{ mt: 2 }}>
+                <Button variant="contained" href="#">
+                  Download CV
+                </Button>
+              </Box>
+            </Grid>
           </Box>
         </Grid>
         <Grid item xs={12} marginLeft={2} marginRight={2}>
@@ -49,7 +61,7 @@ export default function About() {
           <Typography variant="h4">My Skills</Typography>
           <Grid container spacing={2}>
             <Grid item xs={6} md={4}>
-              <Typography variant="body1">html5</Typography>
+              <Typography variant="body1">Html5</Typography>
               <Box sx={{ display: "flex", alignItems: "center" }}>
                 <Typography variant="body2" sx={{ mr: 1 }}>
                   80%
@@ -66,7 +78,7 @@ export default function About() {
               </Box>
             </Grid>
             <Grid item xs={6} md={4}>
-              <Typography variant="body1">css3</Typography>
+              <Typography variant="body1">Css3</Typography>
               <Box sx={{ display: "flex", alignItems: "center" }}>
                 <Typography variant="body2" sx={{ mr: 1 }}>
                   95%
@@ -83,7 +95,7 @@ export default function About() {
               </Box>
             </Grid>
             <Grid item xs={6} md={4}>
-              <Typography variant="body1">javascript</Typography>
+              <Typography variant="body1">JavaScript</Typography>
               <Box sx={{ display: "flex", alignItems: "center" }}>
                 <Typography variant="body2" sx={{ mr: 1 }}>
                   75%
@@ -145,10 +157,10 @@ export default function About() {
                 </Typography>
                 <Box sx={{ mt: 2, display: "flex", alignItems: "center" }}>
                   <Chip label="React" variant="outlined" sx={{ mr: 1 }} />
-                  <Chip label="MUI" variant="outlined" sx={{ mr: 1 }} />
+                  <Chip label="JS" variant="outlined" sx={{ mr: 1 }} />
                   <Chip label="HTML" variant="outlined" sx={{ mr: 1 }} />
                   <Chip label="CSS" variant="outlined" sx={{ mr: 1 }} />
-                  <Rating name="project-rating" value={4} readOnly />
+                  <Rating name="project-rating" value={3} readOnly />
                 </Box>
               </CardContent>
             </Grid>
