@@ -28,18 +28,18 @@ function ProductCard() {
   }, []);
 
   return (
-    <Grid container spacing={10} marginTop={2}>
+    <Grid container spacing={{ xs: 2, sm: 4, md: 6 }} marginTop={20} padding={2}>
       {products
         ? products.map((product) => (
-            <Grid item xs={12} sm={6} md={4} padding={1} key={product.id}>
-              <Card sx={{ width: 400, height: 500 }}>
+            <Grid item xs={12} sm={6} md={4} key={product.id}>
+              <Card sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
                 <CardMedia
                   component="img"
-                  height="190"
+                  height="200"
                   image={product.thumbnail}
                   alt={product.title}
                 />
-                <CardContent>
+                <CardContent sx={{ flexGrow: 1 }}>
                   <Typography gutterBottom variant="h5" component="div">
                     {product.title}
                   </Typography>
@@ -79,17 +79,17 @@ function ProductCard() {
             </Grid>
           ))
         : // Skeleton placeholders
-          Array.from(new Array(9)).map((index) => (
+          Array.from(new Array(9)).map((value, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
-              <Card>
+              <Card sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
                 <Skeleton variant="rectangular" width="100%" height={140} />
-                <CardContent>
+                <CardContent sx={{ flexGrow: 1 }}>
                   <Skeleton variant="text" width="60%" />
                   <Skeleton variant="text" />
                   <Skeleton variant="text" />
                   <Skeleton variant="rectangular" width="80%" height={20} />
                 </CardContent>
-              </Card>
+              </Card> 
             </Grid>
           ))}
     </Grid>
