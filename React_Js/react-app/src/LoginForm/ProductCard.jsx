@@ -28,7 +28,7 @@ function ProductCard() {
   }, []);
 
   return (
-    <Grid container spacing={{ xs: 2, sm: 4, md: 6 }} marginTop={20} padding={2}>
+    <Grid container spacing={{ xs: 2, sm: 4, md: 6 }} sx={{ p:2 }}>
       {products
         ? products.map((product) => (
             <Grid item xs={12} sm={6} md={4} key={product.id}>

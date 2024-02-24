@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import {
+  Grid,
   AppBar,
   Toolbar,
   Button,
@@ -11,6 +12,8 @@ import {
   IconButton,
   Menu,
   MenuItem,
+  Tabs,
+  Tab,
 } from "@mui/material";
 
 import LoginPage from "./LoginForm/Login";
@@ -27,6 +30,7 @@ import MultiStepForm from "./Form/Index";
 const App = () => {
   const [darkMode, setDarkMode] = useState(false); // State for dark mode
   const [anchorEl, setAnchorEl] = useState(null); // State for anchor element of the menu
+  const [selectedTab, setSelectedTab] = useState(0); // State for selected tab index
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
@@ -59,11 +63,15 @@ const App = () => {
     { title: "Shop", path: "/shop" },
   ];
 
+  const handleTabChange = (event, newValue) => {
+    setSelectedTab(newValue);
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline /> {/* Normalize CSS */}
       <BrowserRouter>
-        <AppBar position="fixed" style={{ backgroundColor: "#1769aa" }}>
+        <AppBar style={{ backgroundColor: "#1769aa" }}>
           <Toolbar
             sx={{ p: 0.5, display: "flex", justifyContent: "space-around" }}
           >
@@ -80,7 +88,7 @@ const App = () => {
               <img
                 src="./src/LoginForm/assets/logo.png"
                 alt="RINOR"
-                style={{ maxWidth: "100%", height: "auto " }}
+                style={{ maxWidth: "90%", height: "auto " }}
               />
             </Box>
 
@@ -100,20 +108,22 @@ const App = () => {
                 alignItems: "center",
               }}
             >
-              {menuItems.map((item) => (
-                <Button
-                  key={item.title}
-                  color="inherit"
-                  sx={{
-                    marginLeft: 2,
-                    "&:hover": { backgroundColor: "#bbdefb", color: "#1769aa" },
-                  }}
-                  component={Link}
-                  to={item.path}
-                >
-                  {item.title}
-                </Button>
-              ))}
+              {/* Navigation Tabs */}
+              <Tabs
+                value={selectedTab}
+                onChange={handleTabChange}
+                indicatorColor="secondary"
+                textColor="white"
+              >
+                {menuItems.map((item, index) => (
+                  <Tab
+                    key={index}
+                    label={item.title}
+                    component={Link}
+                    to={item.path}
+                  />
+                ))}
+              </Tabs>
             </Box>
 
             {/* Dark mode toggle */}
@@ -164,16 +174,17 @@ const App = () => {
             </MenuItem>
           ))}
         </Menu>
-
-        <Routes>
-          <Route path="/form" element={<MultiStepForm />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/shop" element={<ProductCard />} />
-          <Route path="/products/:id" element={<SingleProduct />} />
-        </Routes>
+        
+          <Routes>
+            <Route path="/form" element={<MultiStepForm />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/shop" element={<ProductCard />} />
+            <Route path="/products/:id" element={<SingleProduct />} />
+          </Routes>
+        
       </BrowserRouter>
     </ThemeProvider>
   );
