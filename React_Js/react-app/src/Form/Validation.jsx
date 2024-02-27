@@ -15,16 +15,18 @@ const ValidationSchema = Yup.object().shape({
   email: Yup.string()
     .email("Invalid email address")
     .required("Email is required"),
-  phoneNumber: Yup.string()
-    .matches(/^\d{11}$/, "Phone number must be 11 digits")
-    .required("Phone Number is required"),
-  address: Yup.string().required("Address is required"),
   password: Yup.string()
     .min(8, "Password must be at least 6 characters")
     .required("Password is required"),
   confirmPassword: Yup.string()
     .oneOf([Yup.ref("password"), null], "Passwords must match")
     .required("Confirm Password is required"),
+  phoneNumber: Yup.string()
+    .matches(/^\d{11}$/, "Phone number must be 11 digits")
+    .required("Phone Number is required"),
+  address: Yup.string().required("Address is required"),
+  gender: Yup.string().required("required"),
+  // dateOfBirth: Yup.string().required("required"),
 });
 
 export default ValidationSchema;

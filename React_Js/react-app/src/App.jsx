@@ -112,8 +112,8 @@ const App = () => {
               <Tabs
                 value={selectedTab}
                 onChange={handleTabChange}
-                indicatorColor="secondary"
-                textColor="white"
+                indicatorColor="primary"
+                textColor="inherit"
               >
                 {menuItems.map((item, index) => (
                   <Tab

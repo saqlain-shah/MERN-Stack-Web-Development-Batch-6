@@ -11,8 +11,12 @@ import {
   Modal,
   Typography,
   Fade,
+  RadioGroup,
+  Radio,
+  FormControlLabel,
 } from "@mui/material";
-
+import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import Values from "./InitialValue";
 import ValidationSchema from "./Validation";
 
@@ -39,16 +43,19 @@ const MultiStepForm = () => {
       activeStep === 0 &&
       !formik.errors.firstName &&
       !formik.errors.lastName &&
-      !formik.errors.username
+      !formik.errors.username &&
+      !formik.errors.email &&
+      !formik.errors.password &&
+      !formik.errors.confirmPassword &&
+      !formik.errors.phoneNumber
     ) {
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
     } else if (
       activeStep === 1 &&
-      !formik.errors.email &&
-      !formik.errors.phoneNumber &&
+      !formik.errors.gender &&
       !formik.errors.address &&
-      !formik.errors.password &&
-      !formik.errors.confirmPassword
+      
+      !formik.errors.dateOfBirth
     ) {
       formik.handleSubmit();
     }
@@ -72,6 +79,9 @@ const MultiStepForm = () => {
         alignItems="center"
       >
         <Grid item xs={12} md={8}>
+          <Typography variant="h4" sx={{ textAlign: "center", mb: 5 }}>
+            Registration Form
+          </Typography>
           <Stepper activeStep={activeStep} alternativeLabel>
             <Step key={0}>
               <StepLabel>Step 1</StepLabel>
@@ -144,29 +154,6 @@ const MultiStepForm = () => {
                       />
                     </Box>
                   </Grid>
-                  <Grid item xs={12}>
-                    <Box display="flex" justifyContent="center">
-                      <TextField
-                        id="address"
-                        name="address"
-                        label="Address"
-                        value={formik.values.address}
-                        onBlur={formik.handleBlur}
-                        onChange={formik.handleChange}
-                        error={
-                          formik.touched.address &&
-                          Boolean(formik.errors.address)
-                        }
-                        helperText={
-                          formik.touched.address && formik.errors.address
-                        }
-                        sx={{ width: "50%" }}
-                      />
-                    </Box>
-                  </Grid>
-                </Grid>
-              ) : (
-                <Grid container spacing={2}>
                   <Grid item xs={12}>
                     <Box display="flex" justifyContent="center">
                       <TextField
@@ -249,8 +236,108 @@ const MultiStepForm = () => {
                     </Box>
                   </Grid>
                 </Grid>
+              ) : (
+                <Grid container spacing={2}>
+                  <Grid item xs={12}>
+                    <Box display="flex" justifyContent="center">
+                      <TextField
+                        id="address"
+                        name="address"
+                        label="Address"
+                        value={formik.values.address}
+                        onBlur={formik.handleBlur}
+                        onChange={formik.handleChange}
+                        error={
+                          formik.touched.address &&
+                          Boolean(formik.errors.address)
+                        }
+                        helperText={
+                          formik.touched.address && formik.errors.address
+                        }
+                        sx={{ width: "50%" }}
+                      />
+                    </Box>
+                  </Grid>
+                  <Grid item xs={12}>
+                    <Box display="flex" justifyContent="center">
+                      <LocalizationProvider dateAdapter={AdapterDayjs}>
+                        <DatePicker
+                          label="Date of Birth"
+                          value={formik.values.dateOfBirth}
+                          onBlur={formik.handleBlur}
+                          onChange={(newValue) =>
+                            formik.setFieldValue("dateOfBirth", newValue)
+                          }
+                          TextFieldComponent={(props) => (
+                            <TextField {...props} fullWidth />
+                          )}
+                          error={
+                            formik.touched.dateOfBirth &&
+                            Boolean(formik.errors.dateOfBirth)
+                          }
+                          helperText={
+                            formik.touched.dateOfBirth &&
+                            formik.errors.dateOfBirth
+                          }
+                        />
+                      </LocalizationProvider>
+                    </Box>
+                  </Grid>
+                  <Grid item xs={12}>
+                    <Box
+                      display="flex"
+                      flexWrap="wrap"
+                      justifyContent="center"
+                      alignItems="center"
+                    >
+                      <Typography variant="h6" sx={{ ml: 2, mr: 2 }}>
+                        Gender :
+                      </Typography>
+                      <RadioGroup
+                        name="gender"
+                        value={formik.values.gender}
+                        onBlur={formik.handleBlur}
+                        onChange={formik.handleChange}
+                        error={
+                          formik.touched.gender && Boolean(formik.errors.gender)
+                        }
+                      >
+                        <Box sx={{ display: "flex" }}>
+                          <FormControlLabel
+                            control={<Radio />}
+                            value="male"
+                            label="Male"
+                          />
+                          <FormControlLabel
+                            control={<Radio />}
+                            value="female"
+                            label="Female"
+                          />
+                          <FormControlLabel
+                            control={<Radio />}
+                            value="other"
+                            label="Other"
+                          />
+                        </Box>
+                      </RadioGroup>
+                      <Box>
+                        {formik.touched.gender && formik.errors.gender && (
+                          <Typography variant="body2" color="error">
+                            {formik.errors.gender}
+                          </Typography>
+                        )}
+                      </Box>
+                    </Box>
+                  </Grid>
+                </Grid>
               )}
-              <Box display={"flex"} justifyContent={"space-around"} m={2} pl={2} pr={2}>
+              <Box
+                display={"flex"}
+                justifyContent={"space-around"}
+                m={2}
+                pl={2}
+                pr={2}
+              >
                 {activeStep !== 0 && <Button onClick={handleBack}>Back</Button>}
                 <Button
                   onClick={handleNext}

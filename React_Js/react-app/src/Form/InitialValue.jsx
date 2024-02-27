@@ -4,10 +4,12 @@ const initialValues = {
   lastName: "",
   username: "",
   email: "",
-  phoneNumber: "",
-  address: "",
   password: "",
   confirmPassword: "",
+  phoneNumber: "",
+  address: "",
+  // dateOfBirth: "",
+  // gender: "",
 };
 
 export default initialValues;

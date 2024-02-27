@@ -1,5 +1,4 @@
 import React from "react";
-// import the MUI need
 import {
   Grid,
   Typography,
@@ -12,8 +11,6 @@ import {
   Rating,
   Divider,
 } from "@mui/material";
-// import the mui material components you need
-import {} from "@mui/material";
 
 export default function About() {
   return (
@@ -55,10 +52,11 @@ export default function About() {
           </Box>
         </Grid>
         <Grid item xs={12} marginLeft={2} marginRight={2}>
-          <Divider sx={{ bgcolor: "grey.300" }} />
+          <Divider>
+            <Typography variant="h4">My Skills</Typography>
+          </Divider>
         </Grid>
         <Grid item xs={12} marginLeft={2} marginRight={2}>
-          <Typography variant="h4">My Skills</Typography>
           <Grid container spacing={2}>
             <Grid item xs={6} md={4}>
               <Typography variant="body1">Html5</Typography>
@@ -132,10 +130,11 @@ export default function About() {
           </Grid>
         </Grid>
         <Grid item xs={12} marginLeft={2} marginRight={2}>
-          <Divider sx={{ bgcolor: "grey.300" }} />
+          <Divider>
+            <Typography variant="h4">My Projects</Typography>
+          </Divider>
         </Grid>
         <Grid item xs={12} marginLeft={2} marginRight={2}>
-          <Typography variant="h4">My Projects</Typography>
           <Grid container spacing={2}>
             <Grid item xs={12} md={6}>
               <CardHeader
@@ -156,10 +155,10 @@ export default function About() {
                   It has some cool features and a nice design.
                 </Typography>
                 <Box sx={{ mt: 2, display: "flex", alignItems: "center" }}>
-                  <Chip label="React" variant="outlined" sx={{ mr: 1 }} />
+                  <Chip label="React" variant="contained" sx={{ mr: 1 }} />
                   <Chip label="JS" variant="outlined" sx={{ mr: 1 }} />
-                  <Chip label="HTML" variant="outlined" sx={{ mr: 1 }} />
-                  <Chip label="CSS" variant="outlined" sx={{ mr: 1 }} />
+                  <Chip label="HTML" variant="contained" sx={{ mr: 1 }} />
+                  <Chip label="MUI" variant="outlined" sx={{ mr: 1 }} />
                   <Rating name="project-rating" value={3} readOnly />
                 </Box>
               </CardContent>
