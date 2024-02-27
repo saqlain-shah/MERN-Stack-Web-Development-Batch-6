@@ -4,16 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Calculator</title>
     <style>
       .cal {
-        width: 45%;
+        width: 37%;
         height: 70vh;
-        background-image: url("./IMG_20220503_141130_291.jpg");
-
-        background-size: 80% 70vh;
-        background-repeat: no-repeat;
+        background-color: rgb(194, 194, 194);
         text-align: center;
+       
+
       }
       .cal input[type="button"] {
         width: 90px;
@@ -157,6 +156,7 @@
           <td><input type="button" value="/" onclick="disply('/')" /></td>
         </tr>
       </table>
+
       <address style="color: rgb(238, 15, 15)">&hearts; By Anjum Balghari</address>
     </div>
   </body>
@@ -165,6 +165,7 @@
       document.getElementById("res").value += elm;
       setTimeout(() => {
         document.getElementById("res").value = "";
+
       }, 34000);
     }
     function clearSc() {
@@ -176,6 +177,7 @@
       document.getElementById("res").value = b;
       setTimeout(() => {
         document.getElementById("res").value = "";
+
       }, 30000);
     }
   </script>
