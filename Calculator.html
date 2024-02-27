@@ -12,6 +12,7 @@
         background-color: rgb(194, 194, 194);
         text-align: center;
        
+
       }
       .cal input[type="button"] {
         width: 90px;
@@ -108,10 +109,9 @@
         .cal {
           width: 100%;
           background-size: 100% 70vh;
-        } 
-
+        }
         .cal table {
-          padding: 0px;
+          padding: 0;
           width: 15%;
         }
       }
@@ -156,7 +156,8 @@
           <td><input type="button" value="/" onclick="disply('/')" /></td>
         </tr>
       </table>
-      <address style="color: rgb(155, 59, 59)">&hearts; By Anjum Balghari</address>
+
+      <address style="color: rgb(238, 15, 15)">&hearts; By Anjum Balghari</address>
     </div>
   </body>
   <script>
@@ -164,7 +165,8 @@
       document.getElementById("res").value += elm;
       setTimeout(() => {
         document.getElementById("res").value = "";
-      }, 3000);
+
+      }, 34000);
     }
     function clearSc() {
       document.getElementById("res").value = "";
@@ -175,7 +177,8 @@
       document.getElementById("res").value = b;
       setTimeout(() => {
         document.getElementById("res").value = "";
-      }, 40000);
+
+      }, 30000);
     }
   </script>
 </html>
