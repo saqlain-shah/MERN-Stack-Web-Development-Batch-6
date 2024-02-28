@@ -3,9 +3,12 @@ import { TextField, Button, Box, Modal, Typography } from '@mui/material';
 
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
-    name: '',
+    username: '',
     email: '',
-    confirmemail: ''
+    password: '',
+    address: '',
+    state: '',
+    phone: ''
   });
 
   const [open, setOpen] = useState(false);
@@ -26,70 +29,75 @@ const RegistrationForm = () => {
 
   return (
     <Box
-  sx={{
-    display: 'flex',
-    flexDirection: 'column',
-    width: 300,
-    margin: 'auto',
-    padding: 20,
-    border: '1px solid #ccc',
-    borderRadius: 8,
-    backgroundColor: 'weite' ,// Adjust the color as needed
-    boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)'
-  }}
->
-
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        width: 300,
+        margin: 'auto',
+        padding: 20,
+        border: '1px solid #ccc',
+        borderRadius: 8,
+        backgroundColor: 'white', // Adjust the color as needed
+        boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)'
+      }}
+    >
       <TextField
-        label="Name"
-        name="name"
-        value={formData.name}
+        label="Username"
+        name="username"
+        value={formData.username}
         onChange={handleChange}
         margin="normal"
       />
       <TextField
-        label="email"
+        label="Email"
         type="email"
         name="email"
         value={formData.email}
         onChange={handleChange}
         margin="normal"
       />
-        <TextField
-        label="address"
-        type="address"
+      <TextField
+        label="Password"
+        type="password"
+        name="password"
+        value={formData.password}
+        onChange={handleChange}
+        margin="normal"
+      />
+      <TextField
+        label="Address"
         name="address"
         value={formData.address}
         onChange={handleChange}
         margin="normal"
       />
       <TextField
-        label="state"
-        type="state"
+        label="State"
         name="state"
         value={formData.state}
         onChange={handleChange}
         margin="normal"
       />
       <TextField
-        label="phone"
-        type="number"
+        label="Contact Number"
+        type="tel"
         name="phone"
         value={formData.phone}
         onChange={handleChange}
         margin="normal"
       />
       <Button
-  variant="contained"
-  onClick={handleSubmit}
-  sx={{
-    marginTop: 2,
-    '&:hover': {
-      backgroundColor: '#2E8B57' // Change to desired hover color
-    }
-  }}
->
-  Submit
-</Button>
+        variant="contained"
+        onClick={handleSubmit}
+        sx={{
+          marginTop: 2,
+          '&:hover': {
+            backgroundColor: '#2E8B57' // Change to desired hover color
+          }
+        }}
+      >
+        Submit
+      </Button>
 
       <Modal
         open={open}
@@ -113,19 +121,22 @@ const RegistrationForm = () => {
             Form Data
           </Typography>
           <Typography variant="body1" gutterBottom>
-            Name: {formData.name}
+            Username: {formData.username}
           </Typography>
           <Typography variant="body1" gutterBottom>
-            email: {formData.email}
+            Email: {formData.email}
           </Typography>
           <Typography variant="body1" gutterBottom>
-            phone: {formData.confirmemail}
+            Password: {formData.password}
           </Typography>
           <Typography variant="body1" gutterBottom>
-            address: {formData.address}
+            Address: {formData.address}
           </Typography>
           <Typography variant="body1" gutterBottom>
-            state: {formData.state}
+            State: {formData.state}
+          </Typography>
+          <Typography variant="body1" gutterBottom>
+            Contact Number: {formData.phone}
           </Typography>
           <Button onClick={handleClose} variant="contained" sx={{ marginTop: 2 }}>
             Close
