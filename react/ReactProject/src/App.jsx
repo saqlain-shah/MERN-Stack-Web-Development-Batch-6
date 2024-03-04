@@ -6,6 +6,7 @@ import { AppBar, Toolbar, Typography, Button, Box } from '@mui/material';
 import AboutPage from './component/about';
 import ProductCard from './component/ProductCard';
 import ContactPage from './component/contact';
+import ProductTable from './component/Form/Table';
 import ProductDetails from './component/SingleProduct'; // Corrected import statement for ProductDetails
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
     { title: 'Register', path: '/reg' },
     { title: 'About', path: '/about' },
     { title: 'Shop', path: '/Shop' },
+    { title: 'Table', path: '/Table' },
     { title: 'Contact', path: '/contact' },
   ];
   return (
@@ -48,6 +50,7 @@ const App = () => {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/Shop" element={<ProductCard />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/table" element={<ProductTable />} />
         <Route path="/product/:id" element={<ProductDetails />} /> {/* Use element prop instead of component for rendering React components */}
       </Routes>
     </BrowserRouter>
